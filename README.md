@@ -1,5 +1,7 @@
 # 十分钟魔法练习 (Mathematica)
 
+[![View notebooks](https://wolfr.am/HAAhzkRq)](https://wolfr.am/1CNTcGbW3)
+
 改写自 [十分钟魔法练习 - 玩火](https://github.com/goldimax/magic-in-ten-mins)
 原版为 Java 实现
 
