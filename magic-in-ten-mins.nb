@@ -2274,6 +2274,19 @@ using-lazy-lists"],
  " \:7248\:ff0c\:6682\:4e0d\:8d58\:8ff0\:ff0e"
 }], "Text"]
 }]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:5355\:4f4d\:534a\:7fa4", "Section",
+ CellTags->"ADT"],
+
+Cell[TextData[{
+ "\:524d\:7f6e\:6280\:80fd\:ff1a ",
+ ButtonBox["Wolfram \:8bed\:8a00\:57fa\:7840",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/BasicObjects"]
+}], "CodeText"]
 }]]
 }]]
 }]]
