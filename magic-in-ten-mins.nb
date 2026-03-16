@@ -305,16 +305,50 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]",
  RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"bool", "::", "usage"}], "=", "\"\<bool atom type\>\""}], ";"}],
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]",
+   RowBox[{"bool", "::", "usage"}], "=", "\"\<bool atom type\>\""}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"General", "::", "ctor"}],
+   "=", "\"\<Type constructor `head` supplied with invalid arguments `args`\>\
+\""}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"ArgumentTypeFailure", "=."}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"TypeConstructorFailure", "=."}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
  RowBox[{
   RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}], "\[IndentingNewLine]",
  RowBox[{
-  RowBox[{"system$set", "=", "System`Set"}], ";"}], "\[IndentingNewLine]",
+  RowBox[{
+   RowBox[{"system$set", "=", "System`Set"}], ";"}],
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ArgumentTypeFailure", "[",
+     RowBox[{"s_Symbol", ",", "args_List"}], "]"}], ":=",
+    RowBox[{"Failure", "[",
+     RowBox[{"\"\<InvalidArgument\>\"", ",", "  ",
+      RowBox[{"<|", "\[IndentingNewLine]",
+       RowBox[{
+        RowBox[{"\"\<MessageTemplate\>\"", " ", ":>", " ",
+         RowBox[{"s", "::", "argtype"}]}], ",", "\[IndentingNewLine]",
+        RowBox[{"\"\<MessageParameters\>\"", "\[Rule]",
+         RowBox[{"<|",
+          RowBox[{"\"\<Arguments\>\"", "->", "args"}], " ", "|>"}]}]}],
+       "\[IndentingNewLine]", "|>"}]}], "]"}]}], ";"}],
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]",
  RowBox[{"SetAttributes", "[",
   RowBox[{"integer", ",",
    RowBox[{"{", "}"}]}], "]"}], "\[IndentingNewLine]",
+ RowBox[{"Macros`SetArgumentCount", "[",
+  RowBox[{"integer", ",", "1"}], "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "[", "integer", "]"}], "=",
+   RowBox[{"{",
+    RowBox[{"\"\<ArgumentsPattern\>\"", "->",
+     RowBox[{"{", "_", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]",
  RowBox[{
   RowBox[{"integer", "[",
    RowBox[{"n", ":",
@@ -329,7 +363,7 @@ Cell[BoxData[{
       RowBox[{"x", ",", "IntegerQ", ",",
        RowBox[{"Message", "[",
         RowBox[{
-         RowBox[{"integer", "::", "argtype"}], ",", "x"}], "]"}], ",",
+         RowBox[{"integer", "::", "argtype"}], ",", "1"}], "]"}], ",",
        "integer"}], "]"}], "//", "integer"}]}], "]"}]}], "\[IndentingNewLine]",
  RowBox[{
   RowBox[{"integer", "[", "]"}], ":=",
@@ -342,13 +376,13 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"integer", "[",
-    RowBox[{"x_", ",", "y_", ",", "varg___"}], "]"}], ":=",
+    RowBox[{"x_", ",", "varg__"}], "]"}], ":=",
    RowBox[{"Confirm", "[",
     RowBox[{"$Failed", ",",
      RowBox[{"Message", "[",
       RowBox[{
        RowBox[{"integer", "::", "argx"}], ",", "integer", ",",
-       RowBox[{"2", "+",
+       RowBox[{"1", "+",
         RowBox[{"Length", "@",
          RowBox[{"{", "varg", "}"}]}]}]}], "]"}], ",", "integer"}], "]"}]}],
   RowBox[{"(*",
@@ -390,6 +424,16 @@ Cell[BoxData[{
   ";"}]}], "Input",
  InitializationCell->True],
 
+Cell[BoxData["PackageExport"], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ArgumentTypeFailure", "[",
+  RowBox[{"integer", ",",
+   RowBox[{"{", "1", "}"}]}], "]"}]], "Input"]
+}]],
+
 Cell[CellGroupData[{
 
 Cell["\:6d4b\:8bd5\:5957\:4ef6", "Subsubsection"],
@@ -423,6 +467,23 @@ Cell[BoxData[{
   RowBox[{"integer", "[", "a", "]"}]}], "\[IndentingNewLine]",
  RowBox[{"y", "=",
   RowBox[{"integer", "[", "]"}]}], "\[IndentingNewLine]", "y"}], "Input"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"integer", "[",
+  RowBox[{"2", ",", "3"}], "]"}]], "Input"]
+}]],
+
+Cell[BoxData[
+ RowBox[{"Macros`SetArgumentCount", "[",
+  RowBox[{"foo", ",", "2"}], "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"foo", "[", "1", "]"}]], "Input"]
 }]]
 }]],
 
@@ -442,106 +503,68 @@ Cell[CellGroupData[{
 Cell["\:79ef\:7c7b\:578b (Product type)", "Subsection"],
 
 Cell["\:79ef\:7c7b\:578b\:662f\:6307\:540c\:65f6\:5305\:62ec\:591a\:4e2a\:503c\
-\:7684\:7c7b\:578b\:ff0e", "Text"],
-
-Cell[CellGroupData[{
+\:7684\:7c7b\:578b\:ff0c\:6bd4\:5982 Mathematica \:4e2d\:6a21\:5f0f\:5217\
+\:8868\:5c31\:53ef\:4ee5\:5339\:914d\:591a\:4e2a\:5b57\:6bb5\:ff1a", "Text"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"<|",
-   RowBox[{
-    RowBox[{"a", "->", "b"}], ",",
-    RowBox[{"c", "->", "d"}]}], "|>"}], "//", "FullForm"}]], "Input"]
-}]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"integer", "::", "argx"}]], "Input"]
-}]],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"f", "[",
-   RowBox[{"x", ":",
-    RowBox[{"Except", "[", "_Integer", "]"}]}], "]"}], ":=",
-  RowBox[{"Module", "[",
-   RowBox[{
-    RowBox[{"{",
-     RowBox[{"evaled", "=",
-      RowBox[{"Evaluate", "@", "x"}]}], "}"}], ",",
-    RowBox[{
-     RowBox[{"ConfirmBy", "[",
-      RowBox[{"evaled", ",", "IntegerQ", ",",
-       RowBox[{"Message", "[",
-        RowBox[{
-         RowBox[{"integer", "::", "nan"}], ",", "x"}], "]"}], ",", "f"}],
-      "]"}], ";", "\[IndentingNewLine]",
-     RowBox[{"f", "[", "evaled", "]"}]}]}], "]"}]}], "\[IndentingNewLine]",
- RowBox[{
-  RowBox[{"f", "[", "]"}], ":=",
-  RowBox[{"Confirm", "[",
-   RowBox[{"$Failed", ",",
-    RowBox[{"Message", "[",
-     RowBox[{
-      RowBox[{"f", "::", "argx"}], ",", "f", ",", "0"}], "]"}], ",", "f"}],
-   "]"}]}], "\[IndentingNewLine]",
- RowBox[{
-  RowBox[{"f", "[",
-   RowBox[{"x_", ",", "y_", ",", "varg___"}], "]"}], ":=",
-  RowBox[{"Confirm", "[",
-   RowBox[{"$Failed", ",",
-    RowBox[{"Message", "[",
-     RowBox[{
-      RowBox[{"f", "::", "argx"}], ",", "f", ",",
-      RowBox[{"2", "+",
-       RowBox[{"Length", "@",
-        RowBox[{"{", "varg", "}"}]}]}]}], "]"}], ",", "f"}],
-   "]"}]}]}], "Input"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"f", "[", "1", "]"}]], "Input"]
-}]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"f", "[", "1.1", "]"}]], "Input"]
-}]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"f", "[",
-  RowBox[{"a", ",", "b", ",", "c"}], "]"}]], "Input"]
-}]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"{",
   RowBox[{
-   RowBox[{"f", "[", "]"}], ",",
-   RowBox[{"f", "[", "1", "]"}]}], "}"}]], "Input"]
-}]],
+   RowBox[{"Student", "[",
+    RowBox[{"name_string", ",", "id_integer"}], "]"}], ":="}], ";"}]], "Input"],
 
-Cell[BoxData[
- RowBox[{
-  RowBox[{"g", "[", "]"}], ":=",
-  RowBox[{"Abort", "[", "]"}]}]], "Input"],
+Cell[TextData[{
+ "\:800c\:4e0a\:9762\:8fd9\:6bb5\:4ee3\:7801\:4e2d ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["Student",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "a622322c-882e-7e4d-9a35-a0643b6a8076"],
+ " \:7684\:6a21\:5f0f\:4e2d\:65e2\:6709 ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["string",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "2363be5a-5ae7-c848-bd1b-f337ac108dd4"],
+ " \:7c7b\:578b\:7684\:503c\:4e5f\:6709 ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["integer",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "756666ee-d669-9a41-961d-34a30d385027"],
+ " \:7c7b\:578b\:7684\:503c\:ff0c\:53ef\:4ee5\:8868\:793a\:4e3a ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["string",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "46c78dcf-6321-224c-aab5-3ffa60f44eda"],
+ " \:548c ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["integer",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "12027d45-a55d-2f42-bb27-7b9c9e0c124e"],
+ " \:7684\:300c\:79ef\:300d\:ff0c\:5373 ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"string", "\[ThinSpace]", "*", "\[ThinSpace]", "integer"}],
+   Background->LightDarkSwitched[
+     GrayLevel[0.9]]]], "InlineCode",ExpressionUUID->
+  "7b60e568-b653-1a49-9625-3d38b0c8637a"],
+ "\:ff0e"
+}], "Text"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"g", "[", "1", "]"}]], "Input"]
+ RowBox[{"Messages", "[", "General", "]"}]], "Input"]
 }]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"1", "<>", "2"}]], "Input"]
+ RowBox[{"Message", "[",
+  RowBox[{
+   RowBox[{"General", "::", "argtype"}], ",", "1"}], "]"}]], "Input"]
 }]]
 }]]
 }]]
