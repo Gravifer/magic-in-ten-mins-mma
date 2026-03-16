@@ -2286,7 +2286,255 @@ Cell[TextData[{
  ButtonBox["Wolfram \:8bed\:8a00\:57fa\:7840",
   BaseStyle->"Link",
   ButtonData->"paclet:tutorial/BasicObjects"]
-}], "CodeText"]
+}], "CodeText"],
+
+Cell[CellGroupData[{
+
+Cell["\:534a\:7fa4\:ff08Semigroup\:ff09", "Subsection"],
+
+Cell[TextData[{
+ "\:534a\:7fa4\:662f\:4e00\:79cd\:4ee3\:6570\:7ed3\:6784\:ff0c\:5728\:96c6\
+\:5408 ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5589af50-3340-3649-a9a8-f5f82936b2b3"],
+ " \:4e0a\:5305\:542b\:4e00\:4e2a\:5c06\:4e24\:4e2a ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6917bb4a-0db1-1f40-8be5-e010613cbe6e"],
+ " \:7684\:5143\:7d20\:6620\:5c04\:5230 ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9f78deeb-f24f-ef47-9258-c56fdb5bb6c2"],
+ " \:4e0a\:7684\:8fd0\:7b97\:5373",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ",
+    RowBox[{
+     RowBox[{Cell[TextData[StyleBox["\[Diamond]",
+       FontFamily->"Consolas",
+       FontWeight->"Bold"]],ExpressionUUID->
+       "29254176-f8f5-c048-b3f4-53332ad943d2"], ":", " ",
+      RowBox[{"(",
+       RowBox[{"A", ",", " ", "A"}], ")"}]}], " ", "->", " ", "A"}]}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "34b90888-0a10-0f4b-b8a0-65f16c579ad0"],
+ "\:200b \:ff0c\:540c\:65f6\:8be5\:8fd0\:7b97\:6ee1\:8db3\:7ed3\:5408\:5f8b\
+\:5373 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(",
+      RowBox[{"a", Cell[TextData[StyleBox["\[Diamond]",
+        FontFamily->"Consolas",
+        FontWeight->"Bold"]],ExpressionUUID->
+        "0080f619-dfe0-1b4a-abc6-32e1d2eaf3f9"], "b"}], ")"}], Cell[TextData[
+     StyleBox["\[Diamond]",
+      FontFamily->"Consolas",
+      FontWeight->"Bold"]],ExpressionUUID->
+      "21cf2cb7-88d4-2d48-a522-fc2871413516"], "c"}], " ", "==", " ",
+    RowBox[{"a", Cell[TextData[StyleBox["\[Diamond]",
+      FontFamily->"Consolas",
+      FontWeight->"Bold"]],ExpressionUUID->
+      "8498315f-32c6-c64e-9c71-3a562f90e6d8"],
+     RowBox[{"(",
+      RowBox[{"b", Cell[TextData[StyleBox["\[Diamond]",
+        FontFamily->"Consolas",
+        FontWeight->"Bold"]],ExpressionUUID->
+        "84b6d3f2-bea1-c145-87ff-7a30bb60aa2a"], "c"}], ")"}]}]}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5f84fa45-847c-be4b-8494-fdf13d263a9e"],
+ " \:ff0c\:90a3\:4e48\:4ee3\:6570\:7ed3\:6784 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    RowBox[{Cell[TextData[StyleBox["\[Diamond]",
+      FontFamily->"Consolas",
+      FontWeight->"Bold"]],ExpressionUUID->
+      "d47fd7b6-ffd2-c746-94a7-967337d7e7e8"], ",", " ", "A"}], "}"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fa44b72f-2d27-c340-a894-813abbbd327b"],
+ " \:5c31\:662f\:4e00\:4e2a\:534a\:7fa4\:ff0e"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<Notation`\>\"", "]"}], "\[IndentingNewLine]",
+ RowBox[{"AddInputAlias", "[",
+  RowBox[{"\"\<<>\>\"", "\[Rule]",
+   TemplateBox[{
+     FormBox["\[Diamond]", TraditionalForm]},
+    "NotationTemplateTag"]}], "]"}]}], "Input",
+ InitializationCell->True],
+
+Cell["\<\
+\:6bd4\:5982\:5728\:81ea\:7136\:6570\:96c6\:4e0a\:7684\:52a0\:6cd5\:6216\:8005\
+\:4e58\:6cd5\:53ef\:4ee5\:6784\:6210\:4e00\:4e2a\:534a\:7fa4\:ff1b\:518d\:6bd4\
+\:5982\:5b57\:7b26\:4e32\:96c6\:4e0a\:5b57\:7b26\:4e32\:7684\:8fde\:63a5\:6784\
+\:6210\:4e00\:4e2a\:534a\:7fa4\:ff0c\:8fd9\:6b63\:5f0f\:4e3a\:4ec0\:4e48 \
+Wolfram \:8bed\:8a00\:4e2d\:76f8\:5e94\:7684\:8bed\:6cd5\:662f\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\"\<Hello\>\"", "<>", "\"\<World\>\""}]], "Input"]
+}]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:5355\:4f4d\:534a\:7fa4\:ff08Monoid\:ff09", "Subsection"],
+
+Cell[TextData[{
+ "\:5355\:4f4d\:534a\:7fa4 (\:4e5f\:79f0\:4e3a\:5e7a\:534a\:7fa4\:ff0c\.be \
+\:7fa4\:ff0c",
+ Cell[BoxData[
+  FormBox[
+   TagBox[
+    TooltipBox["\:72ec\:5f02\:70b9",
+     "\"\:6211\:5b9e\:5728\:662f\:4e0d\:77e5\:9053\:8fd9\:4e2a\:7ffb\:8bd1\
+\:662f\:600e\:4e48\:6765\:7684\"",
+     TooltipStyle->"TextStyling"],
+    Annotation[#,
+     "\:6211\:5b9e\:5728\:662f\:4e0d\:77e5\:9053\:8fd9\:4e2a\:7ffb\:8bd1\:662f\
+\:600e\:4e48\:6765\:7684", "Tooltip"]& ], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a09c69cd-c325-f944-8e78-c74bcbdf4a59"],
+ ") \:662f\:4e00\:79cd\:5e26\:5355\:4f4d\:5143\:7684\:534a\:7fa4\:ff0c\:5bf9\
+\:4e8e\:96c6\:5408 ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fa6d3305-5e97-a54c-864c-56a0b852e8bf"],
+ " \:4e0a\:7684\:534a\:7fa4 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    RowBox[{Cell[TextData[StyleBox["\[Diamond]",
+      FontFamily->"Consolas",
+      FontWeight->"Bold"]],ExpressionUUID->
+      "981377d9-9649-6246-b57a-6b147841993d"], ",", " ", "A"}], "}"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4cb03b3f-8d11-8a43-b5b2-35326f98101a"],
+ " \:ff0c",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", "A"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8505b73c-f087-bf40-bcc0-5510c1d83fe6"],
+ " \:4e2d\:7684\:5143\:7d20 ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f2c7e1fd-4445-394d-a854-2c6c6395548a"],
+ " \:4f7f ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "170f87d2-4cfe-104c-9565-cd286f53262c"],
+ " \:4e2d\:7684\:6240\:6709\:5143\:7d20 ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1e3d4d7b-3cdb-8b49-8b19-a0d04c21bcc2"],
+ " \:6ee1\:8db3 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", Cell[TextData[StyleBox["\[Diamond]",
+     FontFamily->"Consolas",
+     FontWeight->"Bold"]],ExpressionUUID->
+     "62c9c86e-2f90-ce42-a107-18938bddeced"], "a"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e2fe5202-d1dd-ae40-a9be-c682c1141d70"],
+ " \:548c ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"a", Cell[TextData[StyleBox["\[Diamond]",
+     FontFamily->"Consolas",
+     FontWeight->"Bold"]],ExpressionUUID->
+     "29fbf72a-3497-5646-aec7-359c4a752967"], "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4109228d-2701-2649-b41a-44c36ef57687"],
+ " \:90fd\:7b49\:4e8e ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fce1161e-5c16-2f40-95a3-e34166a954c8"],
+ "\:ff0c\:5219 ",
+ Cell[BoxData[
+  FormBox["a", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cf19ac75-4fca-7440-9ba8-51aa26d5c6bf"],
+ " \:5c31\:662f ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    RowBox[{Cell[TextData[StyleBox["\[Diamond]",
+      FontFamily->"Consolas",
+      FontWeight->"Bold"]],ExpressionUUID->
+      "efe7bd8a-2e0b-3e4c-bff7-71f9cdeb3c0b"], ",", " ", "A"}], "}"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e82e2a2a-a14f-3943-a323-5cfe7ff3572d"],
+ " \:4e0a\:7684\:5355\:4f4d\:5143\:ff0e"
+}], "Text"],
+
+Cell[TextData[{
+ "\:4e3e\:4e2a\:4f8b\:5b50\:ff0c ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    RowBox[{"+",
+     RowBox[{",", " ", "\:81ea\:7136\:6570\:96c6"}]}], "}"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "42d6f704-15b3-6245-b03f-b80d8c3e3118"],
+ " \:7684\:5355\:4f4d\:5143\:5c31\:662f ",
+ Cell[BoxData[
+  FormBox["0", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a65e6a29-fa09-084a-aca0-95cf5a79d39e"],
+ " \:ff0c ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    RowBox[{"*",
+     RowBox[{",", " ", "\:81ea\:7136\:6570\:96c6"}]}], "}"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "920473df-bde3-2b41-8657-5ca1ad9adb15"],
+ " \:7684\:5355\:4f4d\:5143\:5c31\:662f ",
+ Cell[BoxData[
+  FormBox["1", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d5c20429-27c5-3046-ba1a-3dc6a26335c6"],
+ " \:ff0c  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{",
+    RowBox[{Cell[TextData[StyleBox["<>",
+      FontFamily->"Consolas",
+      FontWeight->"Bold"]],ExpressionUUID->
+      "d0926fe5-17a3-024f-a571-ac4418560824"], ",", " ", "A"}], "}"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dae6128b-74a9-ec4e-b1b9-7f2ca84b88cb"],
+ " \:7684\:5355\:4f4d\:5143\:5c31\:662f\:7a7a\:4e32 ",
+ Cell[BoxData[
+  FormBox["\"\<\>\"", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "be0dd763-a56b-7946-9e77-5b1e22740220"],
+ "\:ff0e"
+}], "Text"]
+}]]
 }]]
 }]]
 }]]
