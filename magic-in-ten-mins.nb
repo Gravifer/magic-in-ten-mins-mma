@@ -326,8 +326,16 @@ Cell[BoxData[
  RowBox[{"MatchQ", "[",
   RowBox[{"\"\<114514\>\"", ",", "integer"}], "]"}]], "Input"],
 
-Cell["\:65e0\:8bba\:5982\:4f55\:ff0c\:8ba9\:6211\:4eec\:5f00\:59cb\:5427\:ff0e\
-", "Text"],
+Cell["\<\
+Mathematica \
+\:4f5c\:4e3a\:91cd\:5199\:7cfb\:7edf\:7684\:7075\:6d3b\:6027\:5141\:8bb8\:6211\
+\:4eec\:57fa\:4e8e\:8868\:8fbe\:5f0f\:5934\:90e8\:6784\:5efa\:66f4\:4e25\:683c\
+\:7684\:6709\:7c7b\:578b DSL\:ff0c\:4f46\:8fc7\:7a0b\:53ef\:80fd\:8f83\:4e3a\
+\:7e41\:7410\:548c\:91cd\:590d\:ff1b \:5982\:679c\:672a\:6765\:771f\:5f97\
+\:586b\:4e86\:5751\:ff0c\:4f1a\:5728\:8fd9\:4e2a\:9879\:76ee\:7684 Head \
+\:7248\:4e2d\:4f53\:73b0\:ff0e
+\:65e0\:8bba\:5982\:4f55\:ff0c\:8ba9\:6211\:4eec\:5f00\:59cb\:5427\:ff0e\
+\>", "Text"],
 
 Cell[CellGroupData[{
 
@@ -2484,7 +2492,7 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell["\:5e94\:7528\:ff1a Maybe", "Subsubsection"],
+Cell["\:5e94\:7528\:ff1a maybe", "Subsubsection"],
 
 Cell[TextData[{
  "\:5982\:4e0b\:6a21\:5f0f\:53ef\:4ee5\:8868\:793a\:672c\:5e94\:7b26\:5408 ",
@@ -2500,7 +2508,8 @@ Cell[TextData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"maybe", "[", "T_", "]"}], ":=",
-  RowBox[{"Null", "|", "T"}]}]], "Input"],
+  RowBox[{"Null", "|", "T"}]}]], "Input",
+ CellTags->"Monoid/maybe/def"],
 
 Cell["\:53ef\:4ee5\:628a\:5b83\:505a\:6210\:4e00\:4e2a monoid", "Text"],
 
@@ -2563,7 +2572,8 @@ Cell[BoxData[{
     Editable->False,
     SelectWithContents->True,
     Selectable->False,
-    StripWrapperBoxes->True]}], ";"}]}], "Input"],
+    StripWrapperBoxes->True]}], ";"}]}], "Input",
+ CellTags->"Monoid/maybe/instance"],
 
 Cell[CellGroupData[{
 
@@ -2583,7 +2593,8 @@ Cell[BoxData[{
   FormBox["\[EmptyDiamond]",
    TraditionalForm], "2",
   FormBox["\[EmptyDiamond]",
-   TraditionalForm], "Null"}]}], "Input"]
+   TraditionalForm], "Null"}]}], "Input",
+ CellTags->"Monoid/maybe/use"]
 }]]
 }]],
 
@@ -2752,7 +2763,866 @@ Cell[BoxData["\<\"\:306e\:4e16\:754c\:3078\"\>"], "Echo"]
 }]]
 }]]
 }]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:9ad8\:9636\:7c7b\:578b", "Section",
+ CellTags->"ADT"],
+
+Cell[TextData[{
+ "Mathematica \:5e76\:4e0d\:53d7\:5230\:7c7b\:578b\:7cfb\:7edf\:8868\:8fbe\
+\:80fd\:529b\:7684\:7ea6\:675f\:ff08\:56e0\:4e3a\:6ca1\:6709\:ff09\:ff1b\
+\[LineSeparator]\:5373\:4f7f\:4f7f\:7528 ",
+ ButtonBox["Head",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Head"],
+ " \:6765\:6a21\:62df\:ff0c \:5f97\:5230\:7684\:4e5f\:662f\:63a5\:8fd1 System \
+U \:7684\:4e1c\:897f\:ff0e\n\:6240\:4ee5\:6211\:4eec\:53ea\:662f\:7b80\:5355\
+\:5730\:8bc4\:8bba\:8bf4\:ff0c",
+ ButtonBox["Thread",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Sort"],
+ " \:662f\:4e00\:4e2a\:7528\:6cd5\:63a5\:8fd1\:51fd\:5b50 fmap \:7684\:4e1c\
+\:897f\:ff0e"
+}], "Text"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:5355\:5b50", "Section",
+ CellTags->"ADT"],
+
+Cell[TextData[{
+ "\:5355\:5b50 (Monad) \:662f\:6307\:4e00\:79cd\:6709\:4e00\:4e2a\:7c7b\:578b\
+\:53c2\:6570\:7684\:6570\:636e\:7ed3\:6784\:ff0c\:62e5\:6709 ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["pure",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "fa7dc17b-47e9-e842-8aba-91a5aa16b360"],
+ " (\:4e5f\:53eb ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["unit",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "a8e950d3-c396-864d-af76-7c63bd92f539"],
+ " \:6216\:8005 ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["return",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "d94fed81-5d62-4a45-994f-fb652a624676"],
+ ") \:548c ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["flatMap",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "53d19ba1-53e0-4441-99a9-26d434dee368"],
+ " (\:4e5f\:53eb ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["bind",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "60a079ef-4998-2c47-b2ad-ee89c5a984cc"],
+ ") \:4e24\:79cd\:64cd\:4f5c\:ff1b\:5176\:4e2d ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["pure",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "0624ee0c-1e66-f449-acbe-bb1541a8a6a0"],
+ " \:8981\:6c42\:8fd4\:56de\:4e00\:4e2a\:5305\:542b\:53c2\:6570\:7c7b\:578b\
+\:5185\:5bb9\:7684\:6570\:636e\:7ed3\:6784\:ff0c ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["flatMap",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "6c285971-d646-1740-89eb-7559f63850d8"],
+ " \:8981\:6c42\:628a ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["ma",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "511ab14c-7b4d-8e48-897e-a643623246d2"],
+ " \:4e2d\:7684\:503c\:7ecf\:8fc7 ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["f",
+    FontFamily->"Consolas"], TraditionalForm]],ExpressionUUID->
+  "30ded006-6b5f-cd47-8484-db9361b70d3f"],
+ " \:4ee5\:540e\:518d\:4e32\:8d77\:6765\:ff0e"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<Notation`\>\"", "]"}], "\[IndentingNewLine]",
+ RowBox[{"ClearAll", "[", "MonadBind", "]"}], "\[IndentingNewLine]",
+ RowBox[{"AddInputAlias", "[",
+  RowBox[{"\"\<>>=\>\"", "\[Rule]",
+   TemplateBox[{
+     FormBox[
+      FormBox["\[NestedGreaterGreater]", TraditionalForm], TraditionalForm]},
+    "NotationTemplateTag"]}], "]"}], "\[IndentingNewLine]",
+ RowBox[{"InfixNotation", "[",
+  RowBox[{
+   TemplateBox[{
+     FormBox["\[NestedGreaterGreater]", TraditionalForm]},
+    "NotationTemplateTag"], ",", "MonadBind"}], "]"}], "\[IndentingNewLine]",
+ RowBox[{"SetAttributes", "[",
+  RowBox[{"Monad", ",",
+   RowBox[{"{", "HoldFirst", "}"}]}], "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Monad", "[", "M_", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+    "args__", "]"}], ":=",
+   RowBox[{"Fold", "[",
+    RowBox[{
+     RowBox[{
+      RowBox[{"Monad", "[", "M", "]"}], "[", "\"\<Bind\>\"", "]"}], ",",
+     RowBox[{"{", "args", "}"}]}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True],
+
+Cell[CellGroupData[{
+
+Cell["\:5217\:8868\:5355\:5b50", "Subsection"],
+
+Cell["\:5217\:8868\:662f Wolfram \:8bed\:8a00\:4e2d\:7684\:6838\:5fc3\:62bd\
+\:8c61\:ff0c\:800c\:8bb8\:591a\:76f8\:5173\:7684\:5185\:7f6e\:51fd\:6570\:90fd\
+\:80fd\:5e2e\:52a9\:6211\:4eec\:6a21\:62df\:5355\:5b50\:6027\:ff0e", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[", "List", "]"}], "[", "\"\<Pure\>\"", "]"}], "[",
+   "x_", "]"}], ":=",
+  RowBox[{"{", "x", "}"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[", "List", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+   RowBox[{"l_List", ",", "f_"}], "]"}], ":=",
+  RowBox[{"Flatten", "[",
+   RowBox[{
+    RowBox[{"f", "/@", "l"}], ",", "1"}], "]"}]}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Monad", "[", "List", "]"}], "[", "\"\<Pure\>\"", "]"}], "[", "v",
+  "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"Monad", "[", "List", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+  RowBox[{
+   RowBox[{"{",
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",",
+   RowBox[{"v", "|->",
+    RowBox[{"{",
+     RowBox[{
+      RowBox[{"v", "+", "1"}], ",",
+      RowBox[{"v", "+", "2"}]}], "}"}]}]}], "]"}]}], "Input"]
 }]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["maybe \:5355\:5b50", "Subsection"],
+
+Cell["\:524d\:9762\:7684 maybe \:5e7a\:534a\:7fa4\:53ef\:4ee5\:8fdb\:4e00\
+\:6b65\:5347\:7ea7\:6210\:4e00\:4e2a\:5355\:5b50", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    TagBox[
+     TagBox[
+      DynamicModuleBox[{Typeset`open = False},
+       FrameBox[
+        PaneSelectorBox[{False->GridBox[{
+           {
+            PaneBox[GridBox[{
+               {
+                StyleBox[
+                 StyleBox[
+                  AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                   BoxBaselineShift->-0.25,
+                   BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+
+                  FontColor->RGBColor[
+                   0.8745098039215686, 0.2784313725490196,
+                    0.03137254901960784]],
+                 ShowStringCharacters->False,
+                 FontFamily->"Source Sans Pro Black",
+                 FontSize->0.6538461538461539 Inherited,
+                 FontWeight->"Heavy",
+                 PrivateFontOptions->{"OperatorSubstitution"->False}],
+                StyleBox[
+                 RowBox[{
+                  StyleBox["EvaluatePreviousCell", "ResourceFunctionLabel"],
+                  " "}],
+                 ShowAutoStyles->False,
+                 ShowStringCharacters->False,
+                 FontSize->Rational[12, 13] Inherited,
+                 FontColor->GrayLevel[0.09999084492227013]]}
+              },
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             Alignment->Left,
+             BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+             BaselinePosition->Baseline,
+             FrameMargins->{{3, 0}, {0, 0}}],
+            ItemBox[
+             PaneBox[
+              TogglerBox[Dynamic[Typeset`open], {True->
+
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeCloser"],
+                ImageSizeCache->{11., {1.15185546875, 9.84814453125}}], False->
+
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeOpener"],
+                ImageSizeCache->{11., {1.15185546875, 9.84814453125}}]},
+               Appearance->None,
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{1, 1}, {0, 0}}],
+             Frame->{{
+                Directive[
+                 Opacity[0.5],
+                 RGBColor[
+                 0.831298829690661, 0.847045900003161, 0.850952150003161]],
+                False}, {False, False}}]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}], True->
+         GridBox[{
+           {GridBox[{
+              {
+               PaneBox[GridBox[{
+                  {
+                   StyleBox[
+                    StyleBox[
+                    AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                    BoxBaselineShift->-0.25,
+                    BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+
+                    FontColor->RGBColor[
+                    0.8745098039215686, 0.2784313725490196,
+                    0.03137254901960784]],
+                    ShowStringCharacters->False,
+                    FontFamily->"Source Sans Pro Black",
+                    FontSize->0.6538461538461539 Inherited,
+                    FontWeight->"Heavy",
+                    PrivateFontOptions->{"OperatorSubstitution"->False}],
+                   StyleBox[
+                    RowBox[{
+                    StyleBox["EvaluatePreviousCell", "ResourceFunctionLabel"],
+                     " "}],
+                    ShowAutoStyles->False,
+                    ShowStringCharacters->False,
+                    FontSize->Rational[12, 13] Inherited,
+                    FontColor->GrayLevel[0.09999084492227013]]}
+                 },
+                 GridBoxSpacings->{"Columns" -> {{0.25}}}],
+                Alignment->Left,
+                BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+                BaselinePosition->Baseline,
+                FrameMargins->{{3, 0}, {0, 0}}],
+               ItemBox[
+                PaneBox[
+                 TogglerBox[Dynamic[Typeset`open], {True->
+
+                  DynamicBox[FEPrivate`FrontEndResource[
+                   "FEBitmaps", "IconizeCloser"]], False->
+
+                  DynamicBox[FEPrivate`FrontEndResource[
+                   "FEBitmaps", "IconizeOpener"]]},
+                  Appearance->None,
+                  BaselinePosition->Baseline,
+                  ContentPadding->False,
+                  FrameMargins->0],
+                 Alignment->Left,
+                 BaselinePosition->Baseline,
+                 FrameMargins->{{1, 1}, {0, 0}}],
+                Frame->{{
+                   Directive[
+                    Opacity[0.5],
+                    RGBColor[
+                    0.831298829690661, 0.847045900003161, 0.850952150003161]],
+                    False}, {False, False}}]}
+             },
+             BaselinePosition->{1, 1},
+             GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+           {
+            StyleBox[
+             PaneBox[GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Version (latest): \"\>",
+                   "IconizedLabel"], " ",
+                  TagBox["\<\"1.0.0\"\>",
+                   "IconizedItem"]}]},
+                {
+                 TagBox[
+
+                  TemplateBox[{
+                   "\"Documentation \[RightGuillemet]\"",
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/1498ad60-d47f-4783-a6fa-2ee66f371de7/"},
+                   "HyperlinkURL"],
+                  "IconizedItem"]}
+               },
+               DefaultBaseStyle->"Column",
+               GridBoxAlignment->{"Columns" -> {{Left}}},
+
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{5, 4}, {0, 4}}], "DialogStyle",
+             FontFamily->"Roboto",
+             FontSize->11]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {False, {
+               GrayLevel[0.8]}, False}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+         Typeset`open],
+         BaselinePosition->Baseline,
+         ImageSize->Automatic],
+        Background->RGBColor[
+         0.968505860940661, 0.976440431253161, 0.984252931253161],
+        BaselinePosition->Baseline,
+        DefaultBaseStyle->{
+         LightDarkAutoColorRules -> <|"MarkedColors" -> True|>},
+        FrameMargins->{{0, 0}, {1, 0}},
+        FrameStyle->RGBColor[
+         0.831298829690661, 0.847045900003161, 0.850952150003161],
+        RoundingRadius->4]],
+      #& ,
+      TagBoxNote->" "],
+     {"FunctionResourceBox",
+      RGBColor[0.8745098039215686, 0.2784313725490196, 0.03137254901960784],
+      "EvaluatePreviousCell"},
+     TagBoxNote->"FunctionResourceBox"],
+    ResourceFunction[
+     ResourceObject[<|
+      "Name" -> "EvaluatePreviousCell", "ShortName" -> "EvaluatePreviousCell",
+        "UUID" -> "1498ad60-d47f-4783-a6fa-2ee66f371de7", "ResourceType" ->
+       "Function", "Version" -> "1.0.0", "Description" ->
+       "Evaluate the contents of the previous cell", "RepositoryLocation" ->
+       URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"],
+       "SymbolName" ->
+       "FunctionRepository`$84c901088f7640c3909a46261a088f9e`\
+EvaluatePreviousCell", "FunctionLocation" ->
+       CloudObject[
+        "https://www.wolframcloud.com/obj/7230754a-d627-482c-8e5d-\
+957d63c52f7b"]|>, {
+      ResourceSystemBase ->
+       "https://www.wolframcloud.com/obj/resourcesystem/api/1.0"}]],
+    Selectable->False], "[",
+   RowBox[{"CellTags", "->",
+    RowBox[{"{", "\"\<Monoid/maybe/def\>\"", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    TagBox[
+     TagBox[
+      DynamicModuleBox[{Typeset`open = False},
+       FrameBox[
+        PaneSelectorBox[{False->GridBox[{
+           {
+            PaneBox[GridBox[{
+               {
+                StyleBox[
+                 StyleBox[
+                  AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                   BoxBaselineShift->-0.25,
+                   BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+
+                  FontColor->RGBColor[
+                   0.8745098039215686, 0.2784313725490196,
+                    0.03137254901960784]],
+                 ShowStringCharacters->False,
+                 FontFamily->"Source Sans Pro Black",
+                 FontSize->0.6538461538461539 Inherited,
+                 FontWeight->"Heavy",
+                 PrivateFontOptions->{"OperatorSubstitution"->False}],
+                StyleBox[
+                 RowBox[{
+                  StyleBox["EvaluatePreviousCell", "ResourceFunctionLabel"],
+                  " "}],
+                 ShowAutoStyles->False,
+                 ShowStringCharacters->False,
+                 FontSize->Rational[12, 13] Inherited,
+                 FontColor->GrayLevel[0.09999084492227013]]}
+              },
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             Alignment->Left,
+             BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+             BaselinePosition->Baseline,
+             FrameMargins->{{3, 0}, {0, 0}}],
+            ItemBox[
+             PaneBox[
+              TogglerBox[Dynamic[Typeset`open], {True->
+
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeCloser"],
+                ImageSizeCache->{11., {1.15185546875, 9.84814453125}}], False->
+
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeOpener"],
+                ImageSizeCache->{11., {1.15185546875, 9.84814453125}}]},
+               Appearance->None,
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{1, 1}, {0, 0}}],
+             Frame->{{
+                Directive[
+                 Opacity[0.5],
+                 RGBColor[
+                 0.831298829690661, 0.847045900003161, 0.850952150003161]],
+                False}, {False, False}}]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}], True->
+         GridBox[{
+           {GridBox[{
+              {
+               PaneBox[GridBox[{
+                  {
+                   StyleBox[
+                    StyleBox[
+                    AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                    BoxBaselineShift->-0.25,
+                    BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+
+                    FontColor->RGBColor[
+                    0.8745098039215686, 0.2784313725490196,
+                    0.03137254901960784]],
+                    ShowStringCharacters->False,
+                    FontFamily->"Source Sans Pro Black",
+                    FontSize->0.6538461538461539 Inherited,
+                    FontWeight->"Heavy",
+                    PrivateFontOptions->{"OperatorSubstitution"->False}],
+                   StyleBox[
+                    RowBox[{
+                    StyleBox["EvaluatePreviousCell", "ResourceFunctionLabel"],
+                     " "}],
+                    ShowAutoStyles->False,
+                    ShowStringCharacters->False,
+                    FontSize->Rational[12, 13] Inherited,
+                    FontColor->GrayLevel[0.09999084492227013]]}
+                 },
+                 GridBoxSpacings->{"Columns" -> {{0.25}}}],
+                Alignment->Left,
+                BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+                BaselinePosition->Baseline,
+                FrameMargins->{{3, 0}, {0, 0}}],
+               ItemBox[
+                PaneBox[
+                 TogglerBox[Dynamic[Typeset`open], {True->
+
+                  DynamicBox[FEPrivate`FrontEndResource[
+                   "FEBitmaps", "IconizeCloser"]], False->
+
+                  DynamicBox[FEPrivate`FrontEndResource[
+                   "FEBitmaps", "IconizeOpener"]]},
+                  Appearance->None,
+                  BaselinePosition->Baseline,
+                  ContentPadding->False,
+                  FrameMargins->0],
+                 Alignment->Left,
+                 BaselinePosition->Baseline,
+                 FrameMargins->{{1, 1}, {0, 0}}],
+                Frame->{{
+                   Directive[
+                    Opacity[0.5],
+                    RGBColor[
+                    0.831298829690661, 0.847045900003161, 0.850952150003161]],
+                    False}, {False, False}}]}
+             },
+             BaselinePosition->{1, 1},
+             GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+           {
+            StyleBox[
+             PaneBox[GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Version (latest): \"\>",
+                   "IconizedLabel"], " ",
+                  TagBox["\<\"1.0.0\"\>",
+                   "IconizedItem"]}]},
+                {
+                 TagBox[
+
+                  TemplateBox[{
+                   "\"Documentation \[RightGuillemet]\"",
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/1498ad60-d47f-4783-a6fa-2ee66f371de7/"},
+                   "HyperlinkURL"],
+                  "IconizedItem"]}
+               },
+               DefaultBaseStyle->"Column",
+               GridBoxAlignment->{"Columns" -> {{Left}}},
+
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{5, 4}, {0, 4}}], "DialogStyle",
+             FontFamily->"Roboto",
+             FontSize->11]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {False, {
+               GrayLevel[0.8]}, False}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+         Typeset`open],
+         BaselinePosition->Baseline,
+         ImageSize->Automatic],
+        Background->RGBColor[
+         0.968505860940661, 0.976440431253161, 0.984252931253161],
+        BaselinePosition->Baseline,
+        DefaultBaseStyle->{
+         LightDarkAutoColorRules -> <|"MarkedColors" -> True|>},
+        FrameMargins->{{0, 0}, {1, 0}},
+        FrameStyle->RGBColor[
+         0.831298829690661, 0.847045900003161, 0.850952150003161],
+        RoundingRadius->4]],
+      #& ,
+      TagBoxNote->" "],
+     {"FunctionResourceBox",
+      RGBColor[0.8745098039215686, 0.2784313725490196, 0.03137254901960784],
+      "EvaluatePreviousCell"},
+     TagBoxNote->"FunctionResourceBox"],
+    ResourceFunction[
+     ResourceObject[<|
+      "Name" -> "EvaluatePreviousCell", "ShortName" -> "EvaluatePreviousCell",
+        "UUID" -> "1498ad60-d47f-4783-a6fa-2ee66f371de7", "ResourceType" ->
+       "Function", "Version" -> "1.0.0", "Description" ->
+       "Evaluate the contents of the previous cell", "RepositoryLocation" ->
+       URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"],
+       "SymbolName" ->
+       "FunctionRepository`$84c901088f7640c3909a46261a088f9e`\
+EvaluatePreviousCell", "FunctionLocation" ->
+       CloudObject[
+        "https://www.wolframcloud.com/obj/7230754a-d627-482c-8e5d-\
+957d63c52f7b"]|>, {
+      ResourceSystemBase ->
+       "https://www.wolframcloud.com/obj/resourcesystem/api/1.0"}]],
+    Selectable->False], "[",
+   RowBox[{"CellTags", "->",
+    RowBox[{"{", "\"\<Monoid/maybe/instance\>\"", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    TagBox[
+     TagBox[
+      DynamicModuleBox[{Typeset`open = False},
+       FrameBox[
+        PaneSelectorBox[{False->GridBox[{
+           {
+            PaneBox[GridBox[{
+               {
+                StyleBox[
+                 StyleBox[
+                  AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                   BoxBaselineShift->-0.25,
+                   BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+
+                  FontColor->RGBColor[
+                   0.8745098039215686, 0.2784313725490196,
+                    0.03137254901960784]],
+                 ShowStringCharacters->False,
+                 FontFamily->"Source Sans Pro Black",
+                 FontSize->0.6538461538461539 Inherited,
+                 FontWeight->"Heavy",
+                 PrivateFontOptions->{"OperatorSubstitution"->False}],
+                StyleBox[
+                 RowBox[{
+                  StyleBox["EvaluatePreviousCell", "ResourceFunctionLabel"],
+                  " "}],
+                 ShowAutoStyles->False,
+                 ShowStringCharacters->False,
+                 FontSize->Rational[12, 13] Inherited,
+                 FontColor->GrayLevel[0.09999084492227013]]}
+              },
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             Alignment->Left,
+             BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+             BaselinePosition->Baseline,
+             FrameMargins->{{3, 0}, {0, 0}}],
+            ItemBox[
+             PaneBox[
+              TogglerBox[Dynamic[Typeset`open], {True->
+
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeCloser"],
+                ImageSizeCache->{11., {1.15185546875, 9.84814453125}}], False->
+
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeOpener"],
+                ImageSizeCache->{11., {1.15185546875, 9.84814453125}}]},
+               Appearance->None,
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{1, 1}, {0, 0}}],
+             Frame->{{
+                Directive[
+                 Opacity[0.5],
+                 RGBColor[
+                 0.831298829690661, 0.847045900003161, 0.850952150003161]],
+                False}, {False, False}}]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}], True->
+         GridBox[{
+           {GridBox[{
+              {
+               PaneBox[GridBox[{
+                  {
+                   StyleBox[
+                    StyleBox[
+                    AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                    BoxBaselineShift->-0.25,
+                    BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+
+                    FontColor->RGBColor[
+                    0.8745098039215686, 0.2784313725490196,
+                    0.03137254901960784]],
+                    ShowStringCharacters->False,
+                    FontFamily->"Source Sans Pro Black",
+                    FontSize->0.6538461538461539 Inherited,
+                    FontWeight->"Heavy",
+                    PrivateFontOptions->{"OperatorSubstitution"->False}],
+                   StyleBox[
+                    RowBox[{
+                    StyleBox["EvaluatePreviousCell", "ResourceFunctionLabel"],
+                     " "}],
+                    ShowAutoStyles->False,
+                    ShowStringCharacters->False,
+                    FontSize->Rational[12, 13] Inherited,
+                    FontColor->GrayLevel[0.09999084492227013]]}
+                 },
+                 GridBoxSpacings->{"Columns" -> {{0.25}}}],
+                Alignment->Left,
+                BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+                BaselinePosition->Baseline,
+                FrameMargins->{{3, 0}, {0, 0}}],
+               ItemBox[
+                PaneBox[
+                 TogglerBox[Dynamic[Typeset`open], {True->
+
+                  DynamicBox[FEPrivate`FrontEndResource[
+                   "FEBitmaps", "IconizeCloser"]], False->
+
+                  DynamicBox[FEPrivate`FrontEndResource[
+                   "FEBitmaps", "IconizeOpener"]]},
+                  Appearance->None,
+                  BaselinePosition->Baseline,
+                  ContentPadding->False,
+                  FrameMargins->0],
+                 Alignment->Left,
+                 BaselinePosition->Baseline,
+                 FrameMargins->{{1, 1}, {0, 0}}],
+                Frame->{{
+                   Directive[
+                    Opacity[0.5],
+                    RGBColor[
+                    0.831298829690661, 0.847045900003161, 0.850952150003161]],
+                    False}, {False, False}}]}
+             },
+             BaselinePosition->{1, 1},
+             GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+           {
+            StyleBox[
+             PaneBox[GridBox[{
+                {
+                 RowBox[{
+                  TagBox["\<\"Version (latest): \"\>",
+                   "IconizedLabel"], " ",
+                  TagBox["\<\"1.0.0\"\>",
+                   "IconizedItem"]}]},
+                {
+                 TagBox[
+
+                  TemplateBox[{
+                   "\"Documentation \[RightGuillemet]\"",
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/1498ad60-d47f-4783-a6fa-2ee66f371de7/"},
+                   "HyperlinkURL"],
+                  "IconizedItem"]}
+               },
+               DefaultBaseStyle->"Column",
+               GridBoxAlignment->{"Columns" -> {{Left}}},
+
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{5, 4}, {0, 4}}], "DialogStyle",
+             FontFamily->"Roboto",
+             FontSize->11]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {False, {
+               GrayLevel[0.8]}, False}},
+
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+         Typeset`open],
+         BaselinePosition->Baseline,
+         ImageSize->Automatic],
+        Background->RGBColor[
+         0.968505860940661, 0.976440431253161, 0.984252931253161],
+        BaselinePosition->Baseline,
+        DefaultBaseStyle->{
+         LightDarkAutoColorRules -> <|"MarkedColors" -> True|>},
+        FrameMargins->{{0, 0}, {1, 0}},
+        FrameStyle->RGBColor[
+         0.831298829690661, 0.847045900003161, 0.850952150003161],
+        RoundingRadius->4]],
+      #& ,
+      TagBoxNote->" "],
+     {"FunctionResourceBox",
+      RGBColor[0.8745098039215686, 0.2784313725490196, 0.03137254901960784],
+      "EvaluatePreviousCell"},
+     TagBoxNote->"FunctionResourceBox"],
+    ResourceFunction[
+     ResourceObject[<|
+      "Name" -> "EvaluatePreviousCell", "ShortName" -> "EvaluatePreviousCell",
+        "UUID" -> "1498ad60-d47f-4783-a6fa-2ee66f371de7", "ResourceType" ->
+       "Function", "Version" -> "1.0.0", "Description" ->
+       "Evaluate the contents of the previous cell", "RepositoryLocation" ->
+       URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"],
+       "SymbolName" ->
+       "FunctionRepository`$84c901088f7640c3909a46261a088f9e`\
+EvaluatePreviousCell", "FunctionLocation" ->
+       CloudObject[
+        "https://www.wolframcloud.com/obj/7230754a-d627-482c-8e5d-\
+957d63c52f7b"]|>, {
+      ResourceSystemBase ->
+       "https://www.wolframcloud.com/obj/resourcesystem/api/1.0"}]],
+    Selectable->False], "[",
+   RowBox[{"CellTags", "->",
+    RowBox[{"{", "\"\<Monoid/maybe/use\>\"", "}"}]}], "]"}], ";"}], "\n",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Monad", "[",
+      RowBox[{"maybe", "[", "T_", "]"}], "]"}], "[", "\"\<Pure\>\"", "]"}], "[",
+     "x_", "]"}], ":=",
+   RowBox[{"x", "/;",
+    RowBox[{"MatchQ", "[",
+     RowBox[{"x", ",", "T"}], "]"}]}]}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[",
+     RowBox[{"maybe", "[", "T_", "]"}], "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+   RowBox[{"x_", ",", "f_"}], "]"}], ":=",
+  RowBox[{"Which", "[",
+   RowBox[{
+    RowBox[{"MatchQ", "[",
+     RowBox[{"x", ",", "T"}], "]"}], ",",
+    RowBox[{"f", "[", "x", "]"}], ",",
+    RowBox[{"MatchQ", "[",
+     RowBox[{"x", ",", "Null"}], "]"}], ",", "Null", ",", "True", ",",
+    RowBox[{"Abort", "[", "]"}]}], "]"}]}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[",
+     RowBox[{"maybe", "[", "integer", "]"}], "]"}], "[", "Plus", "]"}], "[",
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"m", "=",
+      RowBox[{"Monad", "[",
+       RowBox[{"maybe", "[", "integer", "]"}], "]"}]}], "}"}], ",",
+    "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"m", "[", "\"\<Bind\>\"", "]"}], "[",
+     RowBox[{"x", ",",
+      RowBox[{"x1", "|->", "\[IndentingNewLine]",
+       RowBox[{
+        RowBox[{"m", "[", "\"\<Bind\>\"", "]"}], "[",
+        RowBox[{"y", ",",
+         RowBox[{"y1", "|->", "\[IndentingNewLine]",
+          RowBox[{
+           RowBox[{"m", "[", "\"\<Pure\>\"", "]"}], "[",
+           RowBox[{"x1", "+", "y1"}], "]"}]}]}], "]"}]}]}], "]"}]}],
+   "\[IndentingNewLine]", "]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MapThread", "[",
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[",
+     RowBox[{"maybe", "[", "integer", "]"}], "]"}], "[", "Plus", "]"}], ",",
+   RowBox[{"{",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"1", ",", "1", ",", "Null"}], "}"}], ",",
+     RowBox[{"{",
+      RowBox[{"1", ",", "Null", ",", "1"}], "}"}]}], "}"}]}], "]"}]], "Input"]
+}]]
+}]]
+}]],
+
+Cell["\:72b6\:6001\:5355\:5b50", "Section",
+ CellTags->"ADT"]
 }]]
 }]]
 }]
