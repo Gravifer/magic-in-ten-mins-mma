@@ -3621,8 +3621,254 @@ Cell[BoxData[
 }]]
 }]],
 
+Cell[CellGroupData[{
+
 Cell["\:72b6\:6001\:5355\:5b50", "Section",
- CellTags->"ADT"]
+ CellTags->"ADT"],
+
+Cell["\<\
+\:72b6\:6001\:5355\:5b50\:ff08State Monad\:ff09\:662f\:4e00\:79cd\:53ef\:4ee5\
+\:5305\:542b\:4e00\:4e2a\[OpenCurlyDoubleQuote]\:53ef\:53d8\
+\[CloseCurlyDoubleQuote]\:72b6\:6001\:7684\:5355\:5b50\:ff0c\:6211\:8fd9\:91cc\
+\:7528\:4e86\:5f15\:53f7\:662f\:56e0\:4e3a\:5c3d\:7ba1\:72b6\:6001\:968f\:7740\
+\:903b\:8f91\:6d41\:5728\:53d8\:5316\:4f46\:662f\:5728\:5185\:5b58\:91cc\:9762\
+\:5b9e\:9645\:4e0a\:90fd\:662f\:4e0d\:53d8\:91cf\:3002
+\:5176\:672c\:8d28\:5c31\:662f\:5728\:6bcf\:6b21\:72b6\:6001\:53d8\:5316\:7684\
+\:65f6\:5019\:5c06\:65b0\:72b6\:6001\:4f5c\:4e3a\:4ee3\:8868\:63a5\:4e0b\:6765\
+\:903b\:8f91\:7684\:51fd\:6570\:7684\:8f93\:5165\:3002\:6bd4\:5982\:5bf9\:4e8e\
+\:ff1a\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=",
+   RowBox[{
+    InterpretationBox["i",
+     1], "+", "1"}]}], ";"}], "\[IndentingNewLine]",
+ RowBox[{"Print", "[", "i", "]"}]}], "Input"]
+}]],
+
+Cell["\:53ef\:4ee5\:7528\:72b6\:6001\:5355\:5b50\:7684\:601d\:8def\:6539\:5199\
+\:6210\:ff1a", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(",
+   RowBox[{"v", "|->",
+    RowBox[{"Print", "[", "v", "]"}]}], ")"}], "@",
+  RowBox[{"(",
+   RowBox[{
+    InterpretationBox["i",
+     1], "+", "1"}], ")"}]}]], "Input"]
+}]],
+
+Cell["\:53ef\:4ee5\:641e\:6210\:8fd9\:4e48\:4e00\:5768", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "State", "]"}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"State", "[", "]"}], "[", "f_", "]"}], ":=",
+  RowBox[{"State", "[",
+   RowBox[{"<|",
+    RowBox[{"\"\<run\>\"", "->", "f"}], "|>"}], "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"State", "[", "a_Association", "]"}], "[", "q_", "]"}], ":=",
+  RowBox[{
+   RowBox[{"a", "[", "\"\<run\>\"", "]"}], "[", "q", "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"Format", "[",
+   RowBox[{
+    RowBox[{"State", "[", "a_Association", "]"}], ",", "StandardForm"}],
+   "]"}], ":=",
+  RowBox[{"(*",
+   RowBox[{
+    RowBox[{"see", " ",
+     RowBox[{"https", ":"}]}], "//",
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"mathematica", ".", "stackexchange", ".", "com"}], "/",
+        "questions"}], "/", "213618"}], "/", "implement"}], "-", "abstract", "-",
+      "algebraic", "-",
+     RowBox[{
+      RowBox[{"structure", "/", "213802"}], "#213802"}]}]}], "*)"}],
+  RowBox[{"RawBoxes", "@",
+   RowBox[{"BoxForm`ArrangeSummaryBox", "[",
+    RowBox[{"State", ",",
+     RowBox[{"State", "[", "a", "]"}], ",", "None", ",",
+     RowBox[{"Quiet", "@",
+      RowBox[{"{",
+       RowBox[{"{",
+        RowBox[{
+         RowBox[{"a", "[", "\"\<run\>\"", "]"}], "[", "\[FormalS]", "]"}],
+        "}"}], "}"}]}], ",",
+     RowBox[{"{", "}"}], ",", "StandardForm"}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Pure\>\"", "]"}], "[",
+   "v_", "]"}], ":=",
+  RowBox[{
+   RowBox[{"State", "[", "]"}], "[",
+   RowBox[{"s", "|->",
+    RowBox[{"{",
+     RowBox[{"v", ",", "s"}], "}"}]}], "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+    RowBox[{"x_State", ",", "f_"}], "]"}], ":=",
+   RowBox[{
+    RowBox[{"State", "[", "]"}], "[",
+    RowBox[{"s", "|->", "\[IndentingNewLine]",
+     RowBox[{"With", "[",
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{"r", "=",
+         RowBox[{"x", "[", "s", "]"}]}], "}"}], ",",
+       RowBox[{"{",
+        RowBox[{"vr", "=",
+         RowBox[{"r", "[",
+          RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",",
+       RowBox[{"{",
+        RowBox[{"sr", "=",
+         RowBox[{"r", "[",
+          RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", "\[IndentingNewLine]",
+       RowBox[{
+        RowBox[{"f", "[", "vr", "]"}], "[", "sr", "]"}]}],
+      "\[IndentingNewLine]", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+   "f_", "]"}], ":=",
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+    RowBox[{"#", ",", "f"}], "]"}], "&"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"State", "[", "\"\<get\>\"", "]"}], "[", "]"}], ":=",
+  RowBox[{
+   RowBox[{"State", "[", "]"}], "[",
+   RowBox[{"s", "|->",
+    RowBox[{"{",
+     RowBox[{"s", ",", "s"}], "}"}]}], "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"State", "[", "\"\<put\>\"", "]"}], "[", "v_", "]"}], ":=",
+  RowBox[{
+   RowBox[{"State", "[", "]"}], "[",
+   RowBox[{"s", "|->",
+    RowBox[{"{",
+     RowBox[{"v", ",", "s"}], "}"}]}], "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"State", "[", "\"\<mod\>\"", "]"}], "[", "f_", "]"}], ":=",
+  RowBox[{
+   RowBox[{"State", "[", "]"}], "[",
+   RowBox[{"s", "|->",
+    RowBox[{"{",
+     RowBox[{"s", ",",
+      RowBox[{"f", "[", "s", "]"}]}], "}"}]}], "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"State", "[", "\"\<run\>\"", "]"}], "[",
+   RowBox[{"s_State", ",", "q_"}], "]"}], ":=",
+  RowBox[{"s", "[", "q", "]"}]}]}], "Input"],
+
+Cell["\:4f7f\:7528\:7684\:8bdd\:8fd9\:91cc\:4e3e\:4e2a\:6c42\:6590\:6ce2\:90a3\
+\:5951\:6570\:5217\:7684\:4f8b\:5b50\:ff1a", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "fib", "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"fib", "[", "0", "]"}], "=",
+  RowBox[{"(",
+   RowBox[{
+    RowBox[{
+     RowBox[{"State", "[", "\"\<get\>\"", "]"}], "[", "]"}], "//",
+    RowBox[{
+     RowBox[{
+      RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+     "\[IndentingNewLine]",
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Pure\>\"", "]"}], "[",
+       RowBox[{"#", "[",
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], "&"}], "]"}]}], ")"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"fib", "[", "1", "]"}], "=",
+  RowBox[{"(",
+   RowBox[{
+    RowBox[{
+     RowBox[{"State", "[", "\"\<get\>\"", "]"}], "[", "]"}], "//",
+    RowBox[{
+     RowBox[{
+      RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+     "\[IndentingNewLine]",
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Pure\>\"", "]"}], "[",
+       RowBox[{"#", "[",
+        RowBox[{"[", "2", "]"}], "]"}], "]"}], "&"}], "]"}]}], ")"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"fib", "[",
+   RowBox[{"n_", "?", "Positive"}], "]"}], ":=",
+  RowBox[{"(",
+   RowBox[{
+    RowBox[{
+     RowBox[{"State", "[", "\"\<mod\>\"", "]"}], "[",
+     RowBox[{
+      RowBox[{"{",
+       RowBox[{
+        RowBox[{"#", "[",
+         RowBox[{"[", "2", "]"}], "]"}], ",",
+        RowBox[{
+         RowBox[{"#", "[",
+          RowBox[{"[", "1", "]"}], "]"}], "+",
+         RowBox[{"#", "[",
+          RowBox[{"[", "2", "]"}], "]"}]}]}], "}"}], "&"}], "]"}], "//",
+    RowBox[{
+     RowBox[{
+      RowBox[{"Monad", "[", "State", "]"}], "[", "\"\<Bind\>\"", "]"}], "[",
+     "\[IndentingNewLine]",
+     RowBox[{
+      RowBox[{"fib", "[",
+       RowBox[{"n", "-", "1"}], "]"}], "&"}], "]"}]}], ")"}]}], "\[IndentingNewLine]",
+ RowBox[{"fib", "[", "7", "]"}], "\[IndentingNewLine]",
+ RowBox[{"%", "@",
+  RowBox[{"{",
+   RowBox[{"0", ",", "1"}], "}"}]}]}], "Input"]
+}]],
+
+Cell[TextData[{
+ "\:5bb9\:6613\:770b\:51fa State \:7684\:5143\:7ec4\:4e2d\:7b2c\:4e8c\:9879\
+\:5c31\:662f\:4ece\:672a\:5b9a\:521d\:6001\:6267\:884c\:6307\:5b9a\:6b65\:9aa4\
+\:7ed9\:51fa\:672b\:6001\:7684\:51fd\:6570\:ff0e \:60f3\:8981 do notation \
+\:53ef\:4ee5\:53c2\:8003 ",
+ ButtonBox["\:793e\:533a\:5e16\:5b50",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://community.wolfram.com/groups/-/m/t/3478726"], None},
+  ButtonNote->"https://community.wolfram.com/groups/-/m/t/3478726"],
+ " \:ff0e"
+}], "Text"]
+}]]
 }]]
 }]]
 }]
