@@ -550,7 +550,9 @@ Cell["\:7531\:548c\:7c7b\:578b\:4e0e\:79ef\:7c7b\:578b\:7ec4\:5408\:6784\:9020\
 
 Cell[CellGroupData[{
 
-Cell["\:5e03\:5c14\:7c7b\:578b", "Subsubsection"],
+Cell["\:5e03\:5c14\:7c7b\:578b", "Subsubsection",
+ CellTags->
+  "ADT/adt/bool"],
 
 Cell["\<\
 \:5229\:7528\:548c\:7c7b\:578b\:7684\:679a\:4e3e\:7279\:6027\:4e0e\:79ef\:7c7b\
@@ -698,7 +700,9 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell["\:81ea\:7136\:6570", "Subsubsection"],
+Cell["\:81ea\:7136\:6570", "Subsubsection",
+ CellTags->
+  "ADT/adt/Nat"],
 
 Cell[TextData[{
  "\:8ba9\:6211\:4eec\:770b\:4e00\:4e9b\:66f4\:6709\:8da3\:7684\:7ed3\:6784\
@@ -5098,7 +5102,8 @@ unevaluated-inactivate-which-one-when"],
 
 Cell[CellGroupData[{
 
-Cell["Church \:7f16\:7801", "Section"],
+Cell["Church \:7f16\:7801", "Section",
+ CellTags->"ChurchE"],
 
 Cell[TextData[{
  "\:524d\:7f6e\:6280\:80fd\:ff1a ",
@@ -5143,6 +5148,13 @@ Cell[TextData[{
 Cell[CellGroupData[{
 
 Cell["\:5e03\:5c14", "Subsection"],
+
+Cell[TextData[{
+ "\:53c2\:89c1\:ff1a ",
+ ButtonBox["ADT",
+  BaseStyle->"Hyperlink",
+  ButtonData->"ADT/adt/bool"]
+}], "CodeText"],
 
 Cell["\:901a\:5e38\:6765\:8bf4\:4e18\:5947\:7f16\:7801\:ff08Church Encoding\
 \:ff09\:7684\:5e03\:5c14\:8868\:8fbe\:4e3a\:ff1a", "Text"],
@@ -5195,10 +5207,535 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"if", "[", "false", "]"}], "[", "a", "]"}], "[", "b",
   "]"}]}], "Input"]
+}]],
+
+Cell["\:5728 Mathematica \:4e2d\:6211\:4eec\:8fd8\:9700\:8981\:6bd4\:8f83\
+\:7410\:788e\:5730\:8003\:8651\:975e Curry \:7684\:7248\:672c", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"true", "\[ThinSpace]\[ThinSpace]\[ThinSpace]", "=",
+  RowBox[{
+   RowBox[{"{",
+    RowBox[{"x", ",", "y"}], "}"}], "|->", "x"}]}], "\[IndentingNewLine]",
+ RowBox[{"false", "=",
+  RowBox[{
+   RowBox[{"{",
+    RowBox[{"x", ",", "y"}], "}"}], "|->", "y"}]}], "\[IndentingNewLine]",
+ RowBox[{"if", "=",
+  RowBox[{
+   RowBox[{"{",
+    RowBox[{"b", ",", "x", ",", "y"}], "}"}], "|->",
+   RowBox[{"b", "[",
+    RowBox[{"x", ",", "y"}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{"if", "[",
+  RowBox[{"true", ",", "a", ",", "b"}], "]"}], "\[IndentingNewLine]",
+ RowBox[{"if", "[",
+  RowBox[{"false", ",", "a", ",", "b"}], "]"}]}], "Input"]
 }]]
 }]],
 
-Cell["\:81ea\:7136\:6570", "Subsection"]
+Cell[CellGroupData[{
+
+Cell["\:81ea\:7136\:6570", "Subsection"],
+
+Cell[TextData[{
+ "\:53c2\:89c1\:ff1a ",
+ ButtonBox["ADT",
+  BaseStyle->"Hyperlink",
+  ButtonData->"ADT/adt/Nat"]
+}], "CodeText"],
+
+Cell[TextData[{
+ "\:76ae\:4e9a\:8bfa\:6784\:9020\:ff08Peano Construct\:ff09\:662f\:76ee\:524d\
+\:666e\:904d\:4f7f\:7528\:7684\:81ea\:7136\:6570\:5b9a\:4e49\:ff0e \:7b80\
+\:5355\:6765\:8bf4\:ff0c ",
+ Cell[BoxData[
+  FormBox["0", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "917ab659-044b-ea43-a4da-4f2feb8ab0e7"],
+ " \:7528 ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c3fcb142-f088-514e-989e-8312b5111feb"],
+ " \:8868\:793a\:ff0c ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e00252a9-894c-f043-a777-80ae2061229d"],
+ " \:7528 ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4ab02e33-c814-aa4f-9a1d-5e8adead0112"],
+ " \:4e2a ",
+ Cell[BoxData[
+  FormBox["S", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "14c4d20b-8be4-114e-8f59-977074f1cf19"],
+ " \:548c\:4e00\:4e2a ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "187cbf19-bd95-5043-9e2a-bdcefafd7674"],
+ " \:8868\:793a\:3002\:6bd4\:5982 ",
+ Cell[BoxData[
+  FormBox["3", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "caa7ef19-c0df-604b-b727-6324c16a126d"],
+ " \:5c31\:662f ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]",
+    "Z"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "24f46582-928e-574e-a8ea-cff403801fdf"],
+ " \:ff0e \n\
+\:800c\:76ae\:4e9a\:8bfa\:6784\:9020\:7684\:52a0\:6cd5\:5c31\:76f8\:5f53\:4e8e\
+\:628a\:4e00\:4e2a\:6570\:7684 ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e2c00754-50b3-e247-9839-f210b68a904d"],
+ " \:6362\:6210\:53e6\:4e00\:4e2a\:6570\:ff0c\:5c31\:6bd4\:5982 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", "+", "3"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2533c2f4-80b1-da41-9956-2efc6e208e6e"],
+ " \:5c31\:662f ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]",
+    RowBox[{"S", "(",
+     RowBox[{
+     "S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]",
+       "Z"}], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9b696d88-122c-0240-b424-91e003927888"],
+ " \:ff0e \n\
+\:4e58\:6cd5\:5c31\:76f8\:5f53\:4e8e\:628a\:4e00\:4e2a\:6570\:7684\:6bcf\:4e2a\
+ ",
+ Cell[BoxData[
+  FormBox["S", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b3536da7-3b1b-424c-a3ba-7b047a9f7d18"],
+ " \:6362\:6210\:53e6\:4e00\:4e2a\:6570\:7684 ",
+ Cell[BoxData[
+  FormBox["S", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "395f1ef7-446e-ce4f-bb5e-a2cf596d7cb2"],
+ " \:90e8\:5206\:ff0c\:6bd4\:5982 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", "*", "3"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "05ad32e7-9d17-1c4d-8c02-e09af309b93f"],
+ " \:5c31\:662f ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(",
+     RowBox[{"S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]", "S"}], ")"}],
+    RowBox[{"(",
+     RowBox[{"S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]", "S"}], ")"}],
+    RowBox[{"(",
+     RowBox[{"S", "\[VeryThinSpace]", "S", "\[VeryThinSpace]", "S"}], ")"}],
+    "Z"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ea43e30f-c723-fe4a-b3e8-abba27f2e693"],
+ " \:ff0e"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[",
+  RowBox[{"ChurchE", ",", "S"}], "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"ChurchE", "[", "0", "]"}], "=",
+  RowBox[{
+   RowBox[{"{",
+    RowBox[{"s", ",", "z"}], "}"}], "|->", "z"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"S", "[",
+    RowBox[{"n", ":",
+     RowBox[{"_ChurchE", "|", "_Function"}]}], "]"}], ":=",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"s", ",", "z"}], "}"}], "|->",
+    RowBox[{"n", "[",
+     RowBox[{"s", ",",
+      RowBox[{"s", "[", "z", "]"}]}], "]"}]}]}],
+  RowBox[{"(*",
+   RowBox[{"which", " ", "eagerizes", " ", "to"}], "*)"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"S", "[",
+   RowBox[{"n", ":",
+    RowBox[{"_ChurchE", "|", "_Function"}]}], "]"}], ":=",
+  RowBox[{
+   RowBox[{"S", "[", "n", "]"}], "=",
+   RowBox[{"Module", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"s", ",", "z", ",", "e"}], "}"}], ",", "\[IndentingNewLine]",
+     RowBox[{
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{"s", ",", "z"}], "}"}], "=",
+       RowBox[{"n", "[",
+        RowBox[{"[", "1", "]"}], "]"}]}], ";",
+      RowBox[{"e", "=",
+       RowBox[{"Evaluate", "[",
+        RowBox[{"n", "[",
+         RowBox[{"s", ",",
+          RowBox[{"s", "[", "z", "]"}]}], "]"}], "]"}]}],
+      RowBox[{"(*", " ",
+       RowBox[{
+        RowBox[{"S", " ", "=", " ",
+         RowBox[{"\[Lambda]", " ",
+          RowBox[{"n", " ", ".", " ", "\[Lambda]"}], " ", "s"}]}],
+        "\[ThinSpace]", "\[InvisibleComma]", "\[ThinSpace]",
+        RowBox[{
+         RowBox[{"z", " ", ".", " ", "n"}], " ", "s", " ",
+         RowBox[{"(",
+          RowBox[{
+          "s", "\[ThinSpace]", "\[InvisibleApplication]", "\[ThinSpace]",
+           "z"}], ")"}]}]}], " ", "*)"}], ";", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{
+         RowBox[{"{",
+          RowBox[{"s", ",", "z"}], "}"}], ",", "e"}], "}"}], "//",
+       RowBox[{"Apply", "[", "Function", "]"}]}]}]}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"ChurchE", "[",
+   RowBox[{"n_Integer", "?", "Positive"}], "]"}], ":=",
+  RowBox[{
+   RowBox[{"ChurchE", "[", "n", "]"}], "=",
+   RowBox[{"S", "[",
+    RowBox[{"ChurchE", "[",
+     RowBox[{"n", "-", "1"}], "]"}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"churchsimp", "=",
+   RowBox[{"(",
+    RowBox[{
+     RowBox[{"(",
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{
+         RowBox[{"#", "[",
+          RowBox[{"[", "1", "]"}], "]"}], ",",
+         RowBox[{
+          RowBox[{"#", "[",
+           RowBox[{"[", "2", "]"}], "]"}], "//.",
+          RowBox[{"{",
+           RowBox[{
+            RowBox[{
+             RowBox[{"s", "[", "z", "]"}], "->",
+             RowBox[{
+              TemplateBox[{"Nest"},
+               "InactiveHead",
+               BaseStyle->"Inactive",
+               SyntaxForm->"Symbol",
+               Tooltip->"Inactive[Nest]"], "[",
+              RowBox[{"s", ",", "z", ",", "1"}], "]"}]}], ",",
+            RowBox[{
+             RowBox[{"HoldPattern", "[",
+              RowBox[{"s", "[",
+               RowBox[{
+                TemplateBox[{"Nest"},
+                 "InactiveHead",
+                 BaseStyle->"Inactive",
+                 SyntaxForm->"Symbol",
+                 Tooltip->"Inactive[Nest]"], "[",
+                RowBox[{"s", ",", "e_", ",", "n_"}], "]"}], "]"}], "]"}], ":>",
+             RowBox[{
+              TemplateBox[{"Nest"},
+               "InactiveHead",
+               BaseStyle->"Inactive",
+               SyntaxForm->"Symbol",
+               Tooltip->"Inactive[Nest]"], "[",
+              RowBox[{"s", ",", "e", ",",
+               RowBox[{"n", "+", "1"}]}], "]"}]}]}], "}"}]}]}], "}"}], "//",
+       RowBox[{"Apply", "[", "Function", "]"}]}], ")"}], "&"}], ")"}]}],
+  ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"ChurchE", "[", "3", "]"}], "//", "churchsimp"}]}], "Input"]
+}]],
+
+Cell[TextData[{
+ "\:8fd9\:6837\:7684\:8868\:793a\:65b9\:6cd5\:53eb\:4e18\:5947\:6570 (Church \
+number)\:ff0c \:975e\:5e38\:7c7b\:4f3c\:76ae\:4e9a\:8bfa\:6784\:9020\:ff1b\n\
+\:4e8b\:5b9e\:4e0a\:7528\:8fd9\:6837\:7684\:53d8\:91cf\:547d\:540d\:ff0c\:5f88\
+\:5bb9\:6613\:770b\:51fa\:5b83\:548c\:76ae\:4e9a\:8bfa\:6784\:9020\:540c\:6784\
+\:ff0e\n\:53ef\:4ee5\:770b\:51fa\:5185\:7f6e\:7684 ",
+ ButtonBox["Nest",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Nest"],
+ " \:5c31\:662f\:8fd9\:6837\:5de5\:4f5c\:7684\:ff0e"
+}], "Text"],
+
+Cell[TextData[{
+ "\:4e18\:5947\:6570\:7684\:52a0\:6cd5\:548c\:4e58\:6cd5\:5f88\:7b80\:5355\
+\:ff0c\:52a0\:6cd5\:53ea\:9700\:8981\:628a ",
+ Cell[BoxData[
+  FormBox["z", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dbbfcb53-a90a-0c4c-8fe8-2f6916d85db7"],
+ " \:66ff\:6362\:6210\:53e6\:4e00\:4e2a\:6570\:5c31\:597d\:4e86\:ff0c\:4e58\
+\:6cd5\:53ea\:9700\:8981\:628a ",
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d9270468-a040-f94a-a416-737f1e28b916"],
+ " \:66ff\:6362\:6210\:53e6\:4e00\:4e2a\:6570\:5c31\:597d\:4e86\:ff1a"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "ChurchE", "[", "Plus", "\[ThinSpace]\[ThinSpace]\[ThinSpace]", "]"}], "[",
+    RowBox[{"m_", ",", "n_"}], "]"}], ":=",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"s", ",", "z"}], "}"}], "|->",
+    RowBox[{"m", "[",
+     RowBox[{"s", ",",
+      RowBox[{"n", "[",
+       RowBox[{"s", ",", "z"}], "]"}]}], "]"}]}]}],
+  RowBox[{"(*",
+   RowBox[{"which", " ", "eagerizes", " ", "to"}], "*)"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "ChurchE", "[", "Plus", "\[ThinSpace]\[ThinSpace]\[ThinSpace]", "]"}], "[",
+   RowBox[{"m_", ",", "n_"}], "]"}], ":=",
+  RowBox[{
+   RowBox[{
+    RowBox[{"ChurchE", "[", "Plus", "]"}], "[",
+    RowBox[{"m", ",", "n"}], "]"}], "=",
+   RowBox[{"Module", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"s", ",", "z", ",", "e"}], "}"}], ",", "\[IndentingNewLine]",
+     RowBox[{
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{"s", ",", "z"}], "}"}], "=",
+       RowBox[{"n", "[",
+        RowBox[{"[", "1", "]"}], "]"}]}], ";",
+      RowBox[{"e", "=",
+       RowBox[{"Evaluate", "[",
+        RowBox[{"m", "[",
+         RowBox[{"s", ",",
+          RowBox[{"n", "[",
+           RowBox[{"s", ",", "z"}], "]"}]}], "]"}], "]"}]}], ";",
+      "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{
+         RowBox[{"{",
+          RowBox[{"s", ",", "z"}], "}"}], ",", "e"}], "}"}], "//",
+       RowBox[{"Apply", "[", "Function", "]"}]}]}]}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ChurchE", "[", "Times", "]"}], "[",
+    RowBox[{"m_", ",", "n_"}], "]"}], ":=",
+   RowBox[{
+    RowBox[{"{",
+     RowBox[{"s", ",", "z"}], "}"}], "|->",
+    RowBox[{"m", "[",
+     RowBox[{
+      RowBox[{"z", "|->",
+       RowBox[{"n", "[",
+        RowBox[{"s", ",", "z"}], "]"}]}], ",", "z"}], "]"}]}]}],
+  RowBox[{"(*",
+   RowBox[{"which", " ", "eagerizes", " ", "to"}], "*)"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"ChurchE", "[", "Times", "]"}], "[",
+   RowBox[{"m_", ",", "n_"}], "]"}], ":=",
+  RowBox[{
+   RowBox[{
+    RowBox[{"ChurchE", "[", "Plus", "]"}], "[",
+    RowBox[{"m", ",", "n"}], "]"}], "=",
+   RowBox[{"Module", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"s", ",", "z", ",", "e"}], "}"}], ",", "\[IndentingNewLine]",
+     RowBox[{
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{"s", ",", "z"}], "}"}], "=",
+       RowBox[{"n", "[",
+        RowBox[{"[", "1", "]"}], "]"}]}], ";",
+      RowBox[{"e", "=",
+       RowBox[{"Evaluate", "[",
+        RowBox[{"m", "[",
+         RowBox[{
+          RowBox[{
+           RowBox[{"n", "[",
+            RowBox[{"s", ",", "#"}], "]"}], "&"}], ",", "z"}], "]"}], "]"}]}],
+       ";", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"{",
+        RowBox[{
+         RowBox[{"{",
+          RowBox[{"s", ",", "z"}], "}"}], ",", "e"}], "}"}], "//",
+       RowBox[{"Apply", "[", "Function", "]"}]}]}]}], "]"}]}]}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "ChurchE", "[", "Plus", "\[ThinSpace]\[ThinSpace]\[ThinSpace]", "]"}],
+   "\[ThinSpace]\[ThinSpace]", "[",
+   RowBox[{
+    RowBox[{"ChurchE", "[", "2", "]"}], ",",
+    RowBox[{"ChurchE", "[", "2", "]"}]}], "]"}], "//", "churchsimp"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"ChurchE", "[", "Times", "]"}], "\[ThinSpace]\[ThinSpace]", "[",
+   RowBox[{
+    RowBox[{"ChurchE", "[", "3", "]"}], ",",
+    RowBox[{"ChurchE", "[", "2", "]"}]}], "]"}], "//",
+  "churchsimp"}]}], "Input"]
+}]],
+
+Cell[TextData[{
+ "\:8fd9\:4e5f\:5c31\:89e3\:91ca\:4e86\:4e3a\:4ec0\:4e48 Wolfram \:8bed\:8a00\
+\:4e2d\:4e00\:822c\:66f4\:503e\:5411\:4e8e\:4f7f\:7528 ",
+ ButtonBox["Nest",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Nest"],
+ " \:53ca\:5176\:53d8\:4f53\:800c\:4e0d\:662f\:547d\:4ee4\:5f0f\:7ed3\:6784\
+\:6765\:6267\:884c\:5faa\:73af\:ff0e"
+}], "Text"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:5143\:7ec4", "Subsection"],
+
+Cell["\:7ec8\:4e8e\:5230\:4e86\:6570\:636e\:7ed3\:6784\:90e8\:5206\:ff0c \
+\[Lambda] \:8868\:8fbe\:5f0f\:4fdd\:5b58\:6570\:636e\:7684\:539f\:7406\:662f\
+\:628a\:53c2\:6570\:5168\:90e8\:653e\:5728\:4e00\:4e2a\:63a5\:53d7\:4e00\:4e2a\
+\:63d0\:53d6\:5668\:7684\:51fd\:6570\:91cc\:9762\:ff1a", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"pair", "=",
+  RowBox[{
+   RowBox[{"{",
+    RowBox[{"a", ",", "b"}], "}"}], "|->",
+   RowBox[{"f", "|->",
+    RowBox[{"f", "[",
+     RowBox[{"a", ",", "b"}], "]"}]}]}]}], "\[IndentingNewLine]",
+ RowBox[{"first", "=",
+  RowBox[{"p", "|->",
+   RowBox[{"p", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"x", ",", "y"}], "}"}], "|->", "x"}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{"second", "=",
+  RowBox[{"p", "|->",
+   RowBox[{"p", "[",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"x", ",", "y"}], "}"}], "|->", "y"}], "]"}]}]}]}], "Input"]
+}]],
+
+Cell["\:8fd9\:6837\:5c31\:53ef\:4ee5\:4fdd\:8bc1", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"first", "[",
+  RowBox[{"pair", "[",
+   RowBox[{"x", ",", "y"}], "]"}], "]"}], "\[IndentingNewLine]",
+ RowBox[{"second", "[",
+  RowBox[{"pair", "[",
+   RowBox[{"x", ",", "y"}], "]"}], "]"}]}], "Input"]
+}]],
+
+Cell["\<\
+\:53ef\:89c1\:63d0\:53d6\:5668\:51fd\:6570\:5c31\:662f\:7b80\:5355\:7684\:5206\
+\:91cf\:6295\:5f71\:51fd\:6570\:ff1b
+\:8fdb\:4e00\:6b65\:8bb2\:ff0c\:628a\:5143\:7ec4\:4e32\:8d77\:6765\:5c31\:53ef\
+\:4ee5\:53d8\:6210\:5217\:8868\:ff0c\:800c\:5217\:8868\:5206\:53c9\:5c31\:6210\
+\:4e86\:6811\:ff0c
+\:90a3\:4e48\:5176\:4ed6\:6570\:636e\:7ed3\:6784\:60f3\:800c\:53ef\:77e5\:ff0c\
+\:8fd9\:662f\:795e\:5947\:7684\:ff0e\
+\>", "Text"]
+}]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["Scott \:7f16\:7801", "Section"],
+
+Cell[TextData[{
+ "\:524d\:7f6e\:6280\:80fd\:ff1a \:6784\:9020\:6f14\:7b97, ",
+ ButtonBox["ADT",
+  BaseStyle->"Hyperlink",
+  ButtonData->"ADT"],
+ ", \[Mu]"
+}], "CodeText"],
+
+Cell[TextData[{
+ "\:65af\:79d1\:7279\:7f16\:7801\:ff08Scott Encoding\:ff09\:53ef\:4ee5\:5728 \
+\[Lambda] \:6f14\:7b97\:4e0a\:7f16\:7801 ADT\:ff0c\n\:5176\:6838\:5fc3\:601d\
+\:60f3\:5c31\:662f\:5229\:7528\:89e3\:6784\:51fd\:6570\:6765\:5904\:7406\:548c\
+\:7c7b\:578b\:4e0d\:540c\:7684\:5206\:652f\:ff0e\n\:63a8\:8350\:770b ",
+ ButtonBox["OCaML \:7248",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://github.com/LighghtEeloo/magic-in-ten-mins-ml/blob/main/\
+TheoryOfComputation/ScottE.md"], None},
+  ButtonNote->
+   "https://github.com/LighghtEeloo/magic-in-ten-mins-ml/blob/main/\
+TheoryOfComputation/ScottE.md"],
+ "\:ff0c \:4f53\:9a8c ",
+ ButtonBox["Hindley\[Dash]Milner \:7cfb\:7edf",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://en.wikipedia.org/wiki/Hindley\[Dash]Milner_type_system"],
+    None},
+  ButtonNote->
+   "https://en.wikipedia.org/wiki/Hindley\[Dash]Milner_type_system"],
+ " \:7684\:5feb\:4e50\:ff0e"
+}], "Text"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["Y \:7ec4\:5408\:5b50", "Section"],
+
+Cell[TextData[{
+ "\:524d\:7f6e\:6280\:80fd\:ff1a ",
+ ButtonBox["Wolfram \:8bed\:8a00\:57fa\:7840",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/BasicObjects"],
+ ", ",
+ ButtonBox["\[Lambda] \:6f14\:7b97",
+  BaseStyle->"Hyperlink",
+  ButtonData->"lambda"],
+ ", ",
+ ButtonBox["\[Lambda] \:6f14\:7b97\:7f16\:7801",
+  BaseStyle->"Hyperlink",
+  ButtonData->"ChurchE"]
+}], "CodeText"]
 }]]
 }]]
 }]]
