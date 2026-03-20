@@ -5720,7 +5720,8 @@ TheoryOfComputation/ScottE.md"],
 
 Cell[CellGroupData[{
 
-Cell["Y \:7ec4\:5408\:5b50", "Section"],
+Cell["Y \:7ec4\:5408\:5b50", "Section",
+ CellTags->"Yc"],
 
 Cell[TextData[{
  "\:524d\:7f6e\:6280\:80fd\:ff1a ",
@@ -5735,7 +5736,292 @@ Cell[TextData[{
  ButtonBox["\[Lambda] \:6f14\:7b97\:7f16\:7801",
   BaseStyle->"Hyperlink",
   ButtonData->"ChurchE"]
-}], "CodeText"]
+}], "CodeText"],
+
+Cell[TextData[{
+ "\:5f53\:6211\:4eec\:5e0c\:671b\:8ba9\:4e00\:4e2a ",
+ ButtonBox["Function",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Function"],
+ " \:5bf9\:8c61\:9012\:5f52\:81ea\:5df1\:ff0c \:4e00\:822c\:505a\:6cd5\:4f3c\
+\:4e4e\:53ea\:80fd\:662f\:7ed9\:5b83\:547d\:540d"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"sum", "=",
+  RowBox[{"n", "|->",
+   RowBox[{"If", "[",
+    RowBox[{
+     RowBox[{"n", "==", "0"}], ",", "0", ",",
+     RowBox[{"n", "+",
+      RowBox[{"sum", "[",
+       RowBox[{"n", "-", "1"}], "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]",
+ RowBox[{"sum", "[", "5", "]"}]}], "Input"]
+}]],
+
+Cell["\<\
+\:770b\:8d77\:6765\:9012\:5f52\:5fc5\:987b\:8981\:51fd\:6570\:6709\:540d\:5b57\
+\:ff0c\:4e0d\:7136\:600e\:4e48\:8c03\:7528\:65f6\:8868\:793a\:81ea\:5df1\:5462\
+\:ff1f
+\:5b9e\:9645\:4e0a\:6709\:4e2a\:5f88\:663e\:7136\:7684\:4f8b\:5b50\:ff1a\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(",
+      RowBox[{
+       RowBox[{"#", "[", "#", "]"}], "&"}], ")"}], "@",
+     RowBox[{"(",
+      RowBox[{
+       RowBox[{"#", "[", "#", "]"}], "&"}], ")"}]}], "//", "Trace"}], "//",
+   RowBox[{"(",
+    RowBox[{
+     RowBox[{"Take", "[",
+      RowBox[{"#", ",", "5"}], "]"}], "&"}], ")"}]}], "//",
+  "Column"}]], "Input"]
+}]],
+
+Cell["\<\
+\:8fd9\:4e2a\:8868\:8fbe\:5f0f\:65e0\:8bba\:600e\:4e48\:6c42\:503c\:90fd\:4f1a\
+\:5f97\:5230\:5b83\:81ea\:8eab\:ff0c\:5b9e\:9645\:4e0a\:8fd9\:5c31\:662f\:4e2a\
+\:65e0\:9650\:9012\:5f52\:7684\:4f8b\:5b50\:ff0e
+\:800c\:5728\:5b83\:7684\:57fa\:7840\:4e0a\:7a0d\:52a0\:4fee\:6539\:5c31\:53ef\
+\:4ee5\:5f97\:5230 Y \:7ec4\:5408\:5b50\:ff08Y Combinator\:ff09\:ff1a\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "Yc", "]"}], "\[IndentingNewLine]",
+ RowBox[{"Yc", "=",
+  RowBox[{"f", "|->",
+   RowBox[{
+    RowBox[{"(",
+     RowBox[{"x", "|->",
+      RowBox[{"f", "[",
+       RowBox[{"x", "[", "x", "]"}], "]"}]}], ")"}], "[",
+    RowBox[{"x", "|->",
+     RowBox[{"f", "[",
+      RowBox[{"x", "[", "x", "]"}], "]"}]}], "]"}]}]}]}], "Input"]
+}]],
+
+Cell[TextData[{
+ "\:800c\:5f80 Y \:7ec4\:5408\:5b50\:4e0a\:5e94\:7528\:4e00\:4e2a\:51fd\:6570 \
+",
+ Cell[BoxData[
+  FormBox["g", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "df57ed74-c39c-fd4f-b8e6-e7062f71c8ef"],
+ " \:65f6\:53d1\:751f\:7684\:76f8\:5f53\:4e8e"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Extract", "[",
+    RowBox[{"Yc", ",", "2", ",", "Hold"}], "]"}], "/.",
+   RowBox[{"Function", "->",
+    TemplateBox[{"\[Lambda]"},
+     "InactiveHead",
+     BaseStyle->"Inactive",
+     SyntaxForm->"Symbol",
+     Tooltip->"Inactive[\[Lambda]]"]}]}], "//", "ReleaseHold"}], "\[IndentingNewLine]",
+ RowBox[{"%", "/.",
+  RowBox[{"f", "->", "g"}]}], "\[IndentingNewLine]",
+ RowBox[{"%", "/.",
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     TemplateBox[{"\[Lambda]"},
+      "InactiveHead",
+      BaseStyle->"Inactive",
+      SyntaxForm->"Symbol",
+      Tooltip->"Inactive[\[Lambda]]"], "[",
+     RowBox[{"x_", ",", "b_"}], "]"}], "[", "e_", "]"}], ":>",
+   RowBox[{"(",
+    RowBox[{"b", "/.",
+     RowBox[{"x", "->", "e"}]}], ")"}]}]}], "\[IndentingNewLine]",
+ RowBox[{"%", "/.",
+  RowBox[{"%%", "->",
+   RowBox[{"HoldForm", "[",
+    RowBox[{"Yc", "[", "g", "]"}], "]"}]}]}]}], "Input"]
+}]],
+
+Cell[TextData[{
+ "\:8fd9\:6837 ",
+ Cell[BoxData[
+  FormBox["g", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fc113620-a52d-e041-aa58-99410aa25be3"],
+ " \:5c31\:62ff\:5230\:4e86 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "Y", "\[ThinSpace]", "\[InvisibleApplication]", "\[ThinSpace]", "g"}],
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "047da469-17a2-f545-837e-af3070d5d8ef"],
+ " \:4e5f\:5c31\:662f\:5b83\:81ea\:5df1\:7684\:51fd\:6570\:4f5c\:4e3a\:53c2\
+\:6570\:ff0c\:90a3\:4e48\:5c31\:53ef\:4ee5\:9012\:5f52\:4e86\:ff0e"
+}], "Text"],
+
+Cell[TextData[{
+ "\:663e\:7136 Wolfram \:8bed\:8a00\:662f ",
+ ButtonBox["\:6025\:6027\:6c42\:503c",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://magic.huohuo.moe/html/YCombinator.html#\:6c42\:503c\:7b56\
+\:7565"], None},
+  ButtonNote->
+   "https://magic.huohuo.moe/html/YCombinator.html#\:6c42\:503c\:7b56\:7565"],
+ " \:7684\:ff0c\:771f\:5f97\:7528\:8fd9\:4e2a\:5b9a\:4e49\:4f1a\:9677\:5165\
+\:65e0\:9650\:9012\:5f52\:ff1b\n\:5bf9 Y \:7ec4\:5408\:5b50\:6700\:5185\:4fa7\
+\:505a \[Eta]\[ThinSpace]-\[VeryThinSpace]\:8f6c\:6362 (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[ThinSpace]",
+    RowBox[{"f", " ",
+     SubscriptBox["\[Congruent]", "\[Eta]"], " ",
+     RowBox[{"\[Lambda]", "\[VeryThinSpace]",
+      RowBox[{"f", "\[VeryThinSpace]", ".", "\[ThinSpace]",
+       RowBox[{
+       "f", "\[VeryThinSpace]", "\[InvisibleApplication]", "\[VeryThinSpace]",
+         "x", "\[ThinSpace]"}]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "86e95cec-e6cd-424e-874d-88d15a5fc0ed"],
+ ") \:53ef\:4ee5\:5f97\:5230 Z \:7ec4\:5408\:5b50"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "Zc", "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"Zc", "[", "f_", "]"}], ":=",
+  RowBox[{
+   RowBox[{"(",
+    RowBox[{"x", "|->",
+     RowBox[{"f", "[",
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "[", "x", "]"}], "@", "#"}], "&"}], "]"}]}], ")"}], "[",
+   RowBox[{"x", "|->",
+    RowBox[{"f", "[",
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "[", "x", "]"}], "@", "#"}], "&"}], "]"}]}],
+   "]"}]}]}], "Input"],
+
+Cell["\:8fd9\:4e2a\:5f62\:5f0f\:7684\:4e0d\:52a8\:70b9\:7ec4\:5408\:5b50\:5c31\
+\:80fd\:591f\:9002\:7528\:4e8e\:4e25\:683c\:6c42\:503c", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"sum", "=",
+  RowBox[{"Zc", "[",
+   RowBox[{"self", "|->",
+    RowBox[{"n", "|->",
+     RowBox[{"If", "[",
+      RowBox[{
+       RowBox[{"n", "==", "0"}], ",", "n", ",",
+       RowBox[{"n", "+",
+        RowBox[{"self", "[",
+         RowBox[{"n", "-", "1"}], "]"}]}]}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]",
+ RowBox[{"sum", "[", "5", "]"}]}], "Input"]
+}]],
+
+Cell["Mathematica \:4e5f\:63d0\:4f9b\:4e86 Y \:548c\:5176\:4ed6\:4e00\:4e9b\
+\:7ec4\:5408\:5b50", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??",
+  TemplateBox[{},
+   "CombinatorY"]}]], "Input"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   TemplateBox[{},
+    "CombinatorY"], "\[Application]", "f"}], "/.",
+  RowBox[{"AxiomaticTheory", "[",
+   RowBox[{"\"\<CombinatorAxioms\>\"", ",", "\"\<RewriteRules\>\""}],
+   "]"}]}], "\[IndentingNewLine]",
+ RowBox[{"Nest", "[",
+  RowBox[{
+   RowBox[{"ReplaceAll", "[",
+    RowBox[{
+     RowBox[{
+      TemplateBox[{},
+       "CombinatorY"], "\[Application]", "f_"}], "\[RuleDelayed]",
+     RowBox[{"f", "\[Application]",
+      RowBox[{"(",
+       RowBox[{
+        TemplateBox[{},
+         "CombinatorY"], "\[Application]", "f"}], ")"}]}]}], "]"}], ",",
+   RowBox[{
+    TemplateBox[{},
+     "CombinatorY"], "\[Application]", "f"}], ",", "10"}], "]"}], "\[IndentingNewLine]",
+ RowBox[{"Names", "[", "\"\<System`Combinator*\>\"", "]"}]}], "Input"]
+}]],
+
+Cell["\<\
+\:53ef\:4ee5\:770b\:51fa\:4ed6\:4eec\:6709\:610f\:4e0d\:8ba9\:5b83\:53c2\:4e0e\
+\:4e0d\:7eaf\:7684\:9ed8\:8ba4\:8ba1\:7b97/\:66ff\:6362\:8fc7\:7a0b\:ff0c
+\:800c\:6211\:4eec\:524d\:9762\:7684\:5c1d\:8bd5\:8db3\:4ee5\:8bf4\:660e\:8fd9\
+\:662f\:5408\:7406\:7684\:9009\:62e9\:ff0e\
+\>", "Text"]
+}]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:5f62\:5f0f\:5316\:9a8c\:8bc1", "Chapter"],
+
+Cell[CellGroupData[{
+
+Cell["Curry\[Dash]Howard \:540c\:6784", "Section"],
+
+Cell["\:524d\:7f6e\:6280\:80fd\:ff1a \:6784\:9020\:6f14\:7b97", "CodeText"],
+
+Cell["\:547d\:9898\:5373\:7c7b\:578b\:ff0c \:8bc1\:660e\:5373\:7a0b\:5e8f\
+\:ff0e", "Abstract",
+ FontSlant->"Plain",
+ FontColor->LightDarkSwitched[
+   GrayLevel[0.6]]],
+
+Cell[TextData[{
+ "\:63a8\:8350\:5148\:8bfb\:8bfb ",
+ ButtonBox["\:539f\:7248",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://magic.huohuo.moe/html/CHIso.html"], None},
+  ButtonNote->"https://magic.huohuo.moe/html/CHIso.html"],
+ "\:ff0e"
+}], "Text"],
+
+Cell[TextData[{
+ "\:5c3d\:7ba1 Mathematica \:5728\:6587\:6863\:548c\:535a\:5ba2\:4e2d\:5ba3\
+\:4f20\:81ea\:5df1\:7684 ",
+ ButtonBox["\:5b9a\:7406\:8bc1\:660e",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/TheoremProving"],
+ " \:80fd\:529b\:ff0c\n\:5b83\:5e76\:4e0d\:771f\:5f97\:662f\:4e00\:4e2a\:80fd\
+\:4ee4\:4eba\:6ee1\:610f\:5730\:5b8c\:6210\:76f8\:5173\:5de5\:4f5c\:7684\:7cfb\
+\:7edf\:ff0e"
+}], "Text"]
 }]]
 }]]
 }]]
