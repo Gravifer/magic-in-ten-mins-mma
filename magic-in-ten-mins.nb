@@ -7344,14 +7344,640 @@ Cell[TextData[{
 
 Cell[CellGroupData[{
 
-Cell["\:7eed\:5ef6", "Section"],
+Cell["\:7eed\:5ef6", "Section",
+ CellTags->
+  "continuation"],
 
 Cell[TextData[{
  "\:524d\:7f6e\:6280\:80fd\:ff1a ",
  ButtonBox["Wolfram \:8bed\:8a00\:57fa\:7840",
   BaseStyle->"Link",
   ButtonData->"paclet:tutorial/BasicObjects"]
-}], "CodeText"]
+}], "CodeText"],
+
+Cell["\:7eed\:5ef6\:ff08Continuation\:ff09\:662f\:6307\:4ee3\:8868\:4e00\:4e2a\
+\:7a0b\:5e8f\:672a\:6765\:7684\:51fd\:6570\:ff0c\:5176\:53c2\:6570\:662f\:4e00\
+\:4e2a\:7a0b\:5e8f\:8fc7\:53bb\:8ba1\:7b97\:7684\:7ed3\:679c\:ff0e", "Text"],
+
+Cell["\:6bd4\:5982\:5bf9", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=", "1"}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"i", "++"}], ";"}], "\[IndentingNewLine]",
+ RowBox[{"Print", "[", "i", "]"}]}], "Input"]
+}]],
+
+Cell["\:7b2c\:4e00\:53e5\:7684\:7eed\:5ef6\:5c31\:662f", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "++"}], ";"}], "\[IndentingNewLine]",
+ RowBox[{"Print", "[", "i", "]"}]}], "Input",
+ Evaluatable->False],
+
+Cell["\:7b2c\:4e8c\:53e5\:7684\:7eed\:5ef6\:5c31\:662f", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Print", "[", "i", "]"}]], "Input",
+ Evaluatable->False],
+
+Cell["\:5b9e\:9645\:4e0a\:53ef\:4ee5\:628a\:8fd9\:6574\:4e2a\:7a0b\:5e8f\:7684\
+\:6bcf\:4e00\:884c\:6539\:6210\:4e00\:4e2a\:7eed\:5ef6\:7136\:540e\:7528\:51fd\
+\:6570\:8c03\:7528\:4e32\:8d77\:6765\:53d8\:6210\:548c\:521a\:624d\:7684\:7a0b\
+\:5e8f\:4e00\:6837\:7684\:4e1c\:897f\:ff1a", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"cont1", ":=",
+  RowBox[{"(", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ";", "\[IndentingNewLine]", "cont2"}],
+   "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]",
+ RowBox[{"cont2", ":=",
+  RowBox[{"(", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"i", "++"}], ";", "\[IndentingNewLine]", "cont3"}],
+   "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]",
+ RowBox[{"cont3", ":=",
+  RowBox[{"(", "\[IndentingNewLine]",
+   RowBox[{"Print", "[", "i", "]"}], "\[IndentingNewLine]",
+   ")"}]}], "\[IndentingNewLine]", "cont1"}], "Input"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:7eed\:5ef6\:4f20\:9012\:98ce\:683c", "Subsection"],
+
+Cell["\<\
+\:7eed\:5ef6\:4f20\:9012\:98ce\:683c\:ff08Continuation-Passing Style, CPS\
+\:ff09\:662f\:6307\:628a\:7a0b\:5e8f\:7684\:7eed\:5ef6\:4f5c\:4e3a\:51fd\:6570\
+\:7684\:53c2\:6570\:6765\:83b7\:53d6\:51fd\:6570\:8fd4\:56de\:503c\:7684\:7f16\
+\:7a0b\:601d\:8def\:ff0e\
+\>", "Text"],
+
+Cell["\:628a\:4e0a\:9762\:7684\:4e09\:4e2a cont \:51fd\:6570\:6539\:6210 CPS \
+\:5c31\:662f", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"logic1", "[", "cont_", "]"}], ":=",
+  RowBox[{"(", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ";", "\[IndentingNewLine]",
+    RowBox[{"cont", "[", "i", "]"}]}], "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"logic2", "[", "i_", "]"}], "[", "cont_", "]"}], ":=",
+  RowBox[{"(", "\[IndentingNewLine]",
+   RowBox[{"cont", "[",
+    RowBox[{"i", "+", "1"}], "]"}], "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{
+   RowBox[{"logic3", "[", "i_", "]"}], "[", "cont_", "]"}], ":=",
+  RowBox[{"(", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"Print", "[", "i", "]"}], ";", "\[IndentingNewLine]",
+    RowBox[{"cont", "[", "i", "]"}]}], "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]",
+ RowBox[{"test", ":=",
+  RowBox[{"logic1", "@",
+   RowBox[{"(", "\[IndentingNewLine]",
+    RowBox[{"i", "|->",
+     RowBox[{
+      RowBox[{"logic2", "[", "i", "]"}], "@",
+      RowBox[{"(", "\[IndentingNewLine]",
+       RowBox[{"i", "|->",
+        RowBox[{
+         RowBox[{"logic3", "[", "i", "]"}], "@",
+         RowBox[{"(", "\[IndentingNewLine]",
+          RowBox[{"i", "|->", "Null"}], ")"}]}]}], ")"}]}]}],
+    ")"}]}]}], "\[IndentingNewLine]", "test"}], "Input"]
+}]],
+
+Cell["\<\
+\:6bcf\:4e2a logic \:51fd\:6570\:7684\:6700\:540e\:4e00\:4e2a\:53c2\:6570 f \
+\:5c31\:662f\:6574\:4e2a\:7a0b\:5e8f\:7684\:7eed\:5ef6\:ff0c\:800c\:5728\:6bcf\
+\:4e2a\:51fd\:6570\:7684\:903b\:8f91\:7ed3\:675f\:540e\:6574\:4e2a\:7a0b\:5e8f\
+\:7684\:7eed\:5ef6\:4e5f\:5c31\:662f\:672a\:6765\:4f1a\:88ab\:8c03\:7528\:ff0e\
+\:800c test \
+\:51fd\:6570\:628a\:6574\:4e2a\:7a0b\:5e8f\:7ec4\:88c5\:8d77\:6765\:ff0e\
+\>", "Text"],
+
+Cell["\:5c0f\:670b\:53cb\:ff0c\:4f60\:6709\:6ca1\:6709\:89c9\:5f97\:6700\:540e\
+\:7684\:5199\:6cd5\:8d85\:773c\:719f\:5462\:ff1f\:5b9e\:9645\:4e0a\:8fd9\:4e2a\
+\:5199\:6cd5\:5c31\:662f Monad \:7684\:5199\:6cd5\:ff0c Monad \:7684\:5199\
+\:6cd5\:5c31\:662f CPS\:ff0e", "Text"],
+
+Cell["\<\
+\:53e6\:4e00\:4e2a\:89d2\:5ea6\:6765\:8bf4\:ff0c\:8fd9\:4e5f\:662f\:56de\:8c03\
+\:51fd\:6570\:7684\:5199\:6cd5\:ff0c\:6bcf\:4e2a logic \:51fd\:6570\:5b8c\
+\:6210\:903b\:8f91\:540e\:8c03\:7528\:4e86\:56de\:8c03\:51fd\:6570 f \:6765\
+\:5b8c\:6210\:5269\:4e0b\:7684\:903b\:8f91\:3002\:5b9e\:9645\:4e0a\:ff0c\:5f02\
+\:6b65\:56de\:8c03\:601d\:60f3\:5f88\:5927\:7a0b\:5ea6\:4e0a\:5c31\:662f CPS \
+\:ff0e\
+\>", "Text"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:6709\:754c\:7eed\:5ef6", "Subsection"],
+
+Cell["\:8003\:8651\:6709\:4ece callT \:8c03\:7528\:4e86 test \:ff0c\:5982", \
+"Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"callT", ":=",
+  RowBox[{"(",
+   RowBox[{"test", ";",
+    RowBox[{"Print", "[", "3", "]"}]}],
+   ")"}]}], "\[IndentingNewLine]", "callT"}], "Input"],
+
+Cell[CellGroupData[{
+
+
+}]]
+}]],
+
+Cell[TextData[{
+ "\:90a3\:4e48\:5bf9\:4e8e ",
+ Cell[BoxData[
+  FormBox["logic", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "472d2149-1bf5-ee40-a23d-03c66566c723"],
+ " \:51fd\:6570\:6765\:8bf4\:8c03\:7528\:7684 ",
+ Cell[BoxData[
+  FormBox["cont", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "905dc1de-c068-554b-9b7c-a5e44896d7bf"],
+ " \:8fd9\:4e2a\:7eed\:5ef6\:5e76\:4e0d\:5305\:62ec ",
+ Cell[BoxData[
+  FormBox["callT", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0b1f1faa-219b-ac43-85b8-ba0ecf56e2a0"],
+ " \:4e2d\:7684\:6253\:5370\:8bed\:53e5\:ff0c\:90a3\:4e48\:5b9e\:9645\:4e0a ",
+ Cell[BoxData[
+  FormBox["cont", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "54aea8e1-64af-7a40-a0c5-d39356371e56"],
+ " \:8fd9\:4e2a\:7eed\:5ef6\:5e76\:4e0d\:662f\:6574\:4e2a\:672a\:6765\:800c\
+\:662f ",
+ Cell[BoxData[
+  FormBox["test", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dca3b728-8166-0e40-a0af-064cfe070d80"],
+ " \:91cc\:9762\:5c40\:90e8\:7684\:672a\:6765\:ff0e"
+}], "Text"],
+
+Cell["\:8fd9\:6837\:4ee3\:8868\:5c40\:90e8\:7a0b\:5e8f\:7684\:672a\:6765\:7684\
+\:51fd\:6570\:5c31\:53eb\:6709\:754c\:7eed\:5ef6\:ff08Delimited Continuation\
+\:ff09\:ff0e", "Text"],
+
+Cell["\<\
+\:5b9e\:9645\:4e0a\:5728\:5927\:591a\:65f6\:5019\:7528\:7684\:6bd4\:8f83\:591a\
+\:7684\:8fd8\:662f\:6709\:754c\:7eed\:5ef6\:ff0c\:56e0\:4e3a\:5728 Wolfram \
+\:8bed\:8a00\:4e2d\:83b7\:53d6\:6574\:4e2a\:7a0b\:5e8f\:7684\:7eed\:5ef6\:8fd8\
+\:662f\:6bd4\:8f83\:53cd\:4eba\:4f53\:5de5\:5b66\:7684\:ff0c\:8fd9\:9700\:8981\
+\:5168\:7528 CPS \:7684\:5199\:6cd5\:ff0e\
+\>", "Text"]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:5f02\:5e38", "Subsection"],
+
+Cell["\<\
+\:62ff\:5230\:4e86\:6709\:754c\:7eed\:5ef6\:6211\:4eec\:5c31\:80fd\:5b9e\:73b0\
+\:4e00\:5927\:5806\:63a7\:5236\:6d41\:9b54\:6cd5\:ff0c\:8fd9\:91cc\:62ff\:5f02\
+\:5e38\:5904\:7406\:4e3e\:4e2a\:4f8b\:5b50\:ff0c\:901a\:8fc7CPS\:5199\:6cd5\
+\:81ea\:5df1\:5b9e\:73b0\:4e00\:4e2a try-throw\:ff0e
+\:9996\:5148\:6700\:57fa\:672c\:7684\:60f3\:6cd5\:662f\:628a\:6bcf\:6b21\:8c03\
+\:7528 try \:7684 catch \
+\:51fd\:6570\:4fdd\:5b58\:8d77\:6765\:ff0c\:7531\:4e8e try \:53ef\:5c42\:5c42\
+\:5d4c\:5957\:6240\:4ee5\:6bcf\:6b21\:538b\:5165\:6808\:4e2d\:ff0c\:7136\:540e\
+ throw \:7684\:65f6\:5019\:5c06\:6700\:8fd1\:7684 catch \:51fd\:6570\:53d6\
+\:51fa\:6765\:8c03\:7528\:5373\:53ef\:ff1a\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"cs", "=",
+    RowBox[{"{", "}"}]}], ";"}],
+  RowBox[{"(*",
+   RowBox[{"Stack", " ", "of", " ", "handlers"}], "*)"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"try", "[",
+   RowBox[{"body_", ",", "handler_", ",", "cont_"}], "]"}], ":=",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"PrependTo", "[",
+      RowBox[{"cs", ",",
+       RowBox[{"e", "|->",
+        RowBox[{"handler", "[",
+         RowBox[{"e", ",", "cont"}], "]"}]}]}], "]"}], ";",
+     "\[IndentingNewLine]",
+     RowBox[{"body", "[", "cont", "]"}], ";", "\[IndentingNewLine]",
+     RowBox[{"cs", "=",
+      RowBox[{"Rest", "[", "cs", "]"}]}], ";"}]}], "\[IndentingNewLine]",
+   "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"throw", "[", "e_", "]"}], ":=",
+  RowBox[{
+   RowBox[{"cs", "[",
+    RowBox[{"[", "1", "]"}], "]"}], "[", "e", "]"}]}]}], "Input"],
+
+Cell[TextData[{
+ "\:8fd9\:91cc ",
+ Cell[BoxData[
+  FormBox["body", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a61060e4-7b11-db43-9400-2a2f3e6840b2"],
+ " , ",
+ Cell[BoxData[
+  FormBox["try", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cd5a9dfd-c0ee-204b-92d2-c751b279a092"],
+ ", ",
+ Cell[BoxData[
+  FormBox["handler", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5222413b-51c5-a84f-9a02-72ca26133758"],
+ " \:7684\:6700\:540e\:4e00\:4e2a\:53c2\:6570\:90fd\:662f\:8fd9\:4e2a\:7a0b\
+\:5e8f\:7684\:6709\:754c\:7eed\:5ef6\:ff0e\n\:6709\:4e86 try-throw \:5c31\
+\:53ef\:4ee5\:6309\:7167CPS\:98ce\:683c\:8c03\:7528\:5b83\:4eec\:6765\:8fbe\
+\:5230\:5904\:7406\:5f02\:5e38\:7684\:76ee\:7684\:ff1a"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "test", "]"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"test", "[", "t_", "]"}], ":=",
+  RowBox[{"try", "[", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"cont", "|->",
+     RowBox[{"(", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<try\>\"", "]"}], ";", "\[IndentingNewLine]",
+       RowBox[{"If", "[",
+        RowBox[{
+         RowBox[{"t", "==", "0"}], ",",
+         RowBox[{"throw", "[",
+          InterpretationBox[
+           DynamicModuleBox[{Typeset`open = False},
+            TemplateBox[{"Expression",
+              RowBox[{"Failure", "[",
+                DynamicBox[
+                 FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]],
+                "]"}],
+              GridBox[{{
+                 RowBox[{
+                   TagBox["\"Byte count: \"", "IconizedLabel"],
+                   "\[InvisibleSpace]",
+                   TagBox["696", "IconizedItem"]}]}},
+               GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle ->
+               "Column",
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+              Dynamic[Typeset`open]},
+             "IconizedObject"]],
+           Failure[
+           "DivisionByZero", <|
+            "MessageTemplate" -> MessageName[Divide, "infy"],
+             "MessageParameters" -> {
+               HoldForm[1/0]}|>],
+           SelectWithContents->True,
+           Selectable->False], "]"}], ",", "\[IndentingNewLine]",
+         RowBox[{
+          RowBox[{"Print", "[",
+           RowBox[{"100", "/", "t"}], "]"}], ";", "\[IndentingNewLine]",
+          RowBox[{"cont", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}],
+      "\[IndentingNewLine]", ")"}]}], ",", "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"e", ",", "cont"}], "}"}], "|->",
+     RowBox[{"(", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<catch\>\"", "]"}], ";",
+       "\[IndentingNewLine]",
+       RowBox[{"cont", "[", "]"}]}], "\[IndentingNewLine]", ")"}]}], ",",
+    "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"Print", "[", "\"\<final\>\"", "]"}], "&"}]}],
+   "\[IndentingNewLine]", "]"}]}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", "0", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+
+}]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", "1", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+
+}]]
+}]]
+}]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:4ee3\:6570\:6548\:679c", "Section",
+ CellTags->"algeff"],
+
+Cell[TextData[{
+ "\:524d\:7f6e\:6280\:80fd\:ff1a ",
+ ButtonBox["Wolfram \:8bed\:8a00\:57fa\:7840",
+  BaseStyle->"Link",
+  ButtonData->"paclet:tutorial/BasicObjects"],
+ ", ",
+ ButtonBox["\:7eed\:5ef6",
+  BaseStyle->"Hyperlink",
+  ButtonData->"continuation"]
+}], "CodeText"],
+
+Cell[CellGroupData[{
+
+Cell["\:53ef\:6062\:590d\:5f02\:5e38", "Subsection"],
+
+Cell["\<\
+\:6709\:65f6\:5019\:6211\:4eec\:5e0c\:671b\:5728\:5f02\:5e38\:629b\:51fa\:540e\
+\:7ecf\:8fc7\:4fdd\:5b58\:5f02\:5e38\:4fe1\:606f\:518d\:8df3\:56de\:539f\:6765\
+\:7684\:5730\:65b9\:7ee7\:7eed\:6267\:884c\:ff0e
+\:663e\:7136\:524d\:9762\:5b9e\:73b0\:7684\:5f02\:5e38\:5904\:7406\:65e0\:6cd5\
+\:76f4\:63a5\:5b9e\:73b0\:8fd9\:6837\:7684\:9700\:6c42\:ff0c\:56e0\:4e3a\:5728\
+\:5f02\:5e38\:629b\:51fa\:65f6\:6574\:4e2a\:8c03\:7528\:6808\:7684\:4fe1\:606f\
+\:5168\:90e8\:88ab\:6e05\:9664\:4e86\:ff0e
+Wolfram \:8bed\:8a00\:4e5f\:6ca1\:6709\
+\>", "Text"],
+
+Cell["\:4f46\:5982\:679c\:6211\:4eec\:6709\:4e86\:5f02\:5e38\:629b\:51fa\:65f6\
+\:7684\:7eed\:5ef6\:90a3\:4e48\:53ef\:4ee5\:540c\:65f6\:629b\:51fa\:ff0c\:5728\
+ catch \:5757\:4e2d\:8c03\:7528\:8fd9\:4e2a\:7eed\:5ef6\:5c31\:80fd\:6062\
+\:590d\:4e4b\:524d\:7684\:6267\:884c\:72b6\:6001\:3002", "Text"],
+
+Cell["\:4e0b\:9762\:662f\:5b9e\:73b0\:53ef\:6062\:590d\:5f02\:5e38\:7684 \
+try-catch \:ff1a", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cs", "=",
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"try", "[",
+   RowBox[{"body_", ",", "handler_", ",", "cont_"}], "]"}], ":=",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"PrependTo", "[",
+      RowBox[{"cs", ",",
+       RowBox[{
+        RowBox[{"{",
+         RowBox[{"e", ",", "c"}], "}"}], "|->",
+        RowBox[{"handler", "[",
+         RowBox[{"e", ",", "cont", ",", "c"}], "]"}]}]}], "]"}], ";",
+     "\[IndentingNewLine]",
+     RowBox[{"body", "[", "cont", "]"}], ";", "\[IndentingNewLine]",
+     RowBox[{"cs", "=",
+      RowBox[{"Rest", "[", "cs", "]"}]}], ";"}]}], "\[IndentingNewLine]",
+   "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"throw", "[",
+   RowBox[{"e_", ",", "cont_"}], "]"}], ":=",
+  RowBox[{
+   RowBox[{"cs", "[",
+    RowBox[{"[", "1", "]"}], "]"}], "[",
+   RowBox[{"e", ",", "cont"}], "]"}]}]}], "Input"],
+
+Cell["\:7136\:540e\:5c31\:53ef\:4ee5\:50cf\:4e0b\:9762\:8fd9\:6837\:4f7f\:7528\
+\:ff1a", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"test", "[", "t_", "]"}], ":=",
+  RowBox[{"try", "[", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"cont", "|->",
+     RowBox[{"(", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<try\>\"", "]"}], ";", "\[IndentingNewLine]",
+       RowBox[{"If", "[",
+        RowBox[{
+         RowBox[{"t", "==", "0"}], ",",
+         RowBox[{"throw", "[",
+          RowBox[{
+           InterpretationBox[
+            DynamicModuleBox[{Typeset`open = False},
+             TemplateBox[{"Expression",
+               RowBox[{"Failure", "[",
+                 DynamicBox[
+                  FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]],
+                  "]"}],
+               GridBox[{{
+                  RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"],
+                    "\[InvisibleSpace]",
+                    TagBox["696", "IconizedItem"]}]}},
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle ->
+                "Column",
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+               Dynamic[Typeset`open]},
+              "IconizedObject"]],
+            Failure[
+            "DivisionByZero", <|
+             "MessageTemplate" -> MessageName[Divide, "infy"],
+              "MessageParameters" -> {
+                HoldForm[1/0]}|>],
+            SelectWithContents->True,
+            Selectable->False], ",",
+           RowBox[{
+            RowBox[{"(",
+             RowBox[{
+              RowBox[{"Print", "[", "\"\<resumed\>\"", "]"}], ";",
+              RowBox[{"cont", "[", "]"}]}], ")"}], "&"}]}], "]"}], ",",
+         "\[IndentingNewLine]",
+         RowBox[{
+          RowBox[{"Print", "[",
+           RowBox[{"100", "/", "t"}], "]"}], ";", "\[IndentingNewLine]",
+          RowBox[{"cont", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}],
+      "\[IndentingNewLine]", ")"}]}], ",", "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"e", ",", "cont", ",", "resume"}], "}"}], "|->",
+     RowBox[{"(", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<catch\>\"", "]"}], ";",
+       "\[IndentingNewLine]",
+       RowBox[{"resume", "[", "]"}]}], "\[IndentingNewLine]", ")"}]}], ",",
+    "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"Print", "[", "\"\<final\>\"", "]"}], "&"}]}],
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]",
+ RowBox[{"test", "[", "0", "]"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+
+}]]
+}]]
+}]],
+
+Cell[CellGroupData[{
+
+Cell["\:4ee3\:6570\:6548\:679c", "Subsection"],
+
+Cell["\<\
+\:5982\:679c\:8bf4\:5728\:521a\:521a\:5f02\:5e38\:6062\:590d\:7684\:57fa\:7840\
+\:4e0a\:5e0c\:671b\:5728\:6062\:590d\:65f6\:4fee\:8865\:4e4b\:524d\:7684\:5f02\
+\:5e38\:9519\:8bef\:5c31\:9700\:8981\:628a\:4e4b\:524d\:7684 resume \:51fd\
+\:6570\:52a0\:4e0a\:53c2\:6570\:ff0c
+\:8fd9\:6837\:4fee\:6539\:4ee5\:540e\:5b83\:5c31\:6210\:4e86\:4ee3\:6570\:4f5c\
+\:7528\:ff08Algebraic Effect\:ff09\:7684\:57fa\:7840\:5de5\:5177\:ff1a\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cs", "=",
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"try", "[",
+   RowBox[{"body_", ",", "handler_", ",", "cont_"}], "]"}], ":=",
+  RowBox[{"Module", "[",
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"PrependTo", "[",
+      RowBox[{"cs", ",",
+       RowBox[{
+        RowBox[{"{",
+         RowBox[{"e", ",", "c"}], "}"}], "|->",
+        RowBox[{"handler", "[",
+         RowBox[{"e", ",", "cont", ",", "c"}], "]"}]}]}], "]"}], ";",
+     "\[IndentingNewLine]",
+     RowBox[{"body", "[", "cont", "]"}], ";", "\[IndentingNewLine]",
+     RowBox[{"cs", "=",
+      RowBox[{"Rest", "[", "cs", "]"}]}], ";"}]}], "\[IndentingNewLine]",
+   "]"}]}], "\[IndentingNewLine]",
+ RowBox[{
+  RowBox[{"perform", "[",
+   RowBox[{"e_", ",", "cont_"}], "]"}], ":=",
+  RowBox[{
+   RowBox[{"cs", "[",
+    RowBox[{"[", "1", "]"}], "]"}], "[",
+   RowBox[{"e", ",", "cont"}], "]"}]}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"test", "[", "t_", "]"}], ":=",
+  RowBox[{"try", "[", "\[IndentingNewLine]",
+   RowBox[{
+    RowBox[{"cont", "|->",
+     RowBox[{"(", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<try\>\"", "]"}], ";", "\[IndentingNewLine]",
+       RowBox[{"If", "[",
+        RowBox[{
+         RowBox[{"t", "==", "0"}], ",", "\[IndentingNewLine]",
+         RowBox[{"perform", "[",
+          RowBox[{
+           InterpretationBox[
+            DynamicModuleBox[{Typeset`open = False},
+             TemplateBox[{"Expression",
+               RowBox[{"Failure", "[",
+                 DynamicBox[
+                  FEPrivate`FrontEndResource["FEBitmaps", "IconizeEllipsis"]],
+                  "]"}],
+               GridBox[{{
+                  RowBox[{
+                    TagBox["\"Byte count: \"", "IconizedLabel"],
+                    "\[InvisibleSpace]",
+                    TagBox["696", "IconizedItem"]}]}},
+                GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle ->
+                "Column",
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+               Dynamic[Typeset`open]},
+              "IconizedObject"]],
+            Failure[
+            "DivisionByZero", <|
+             "MessageTemplate" -> MessageName[Divide, "infy"],
+              "MessageParameters" -> {
+                HoldForm[1/0]}|>],
+            SelectWithContents->True,
+            Selectable->False], ",",
+           RowBox[{"v", "|->",
+            RowBox[{"(", "\[IndentingNewLine]",
+             RowBox[{
+              RowBox[{"Print", "[", "\"\<resumed\>\"", "]"}], ";",
+              RowBox[{"Print", "[",
+               RowBox[{"100", "/", "v"}], "]"}], ";",
+              RowBox[{"cont", "[", "]"}]}], "\[IndentingNewLine]", ")"}]}]}],
+          "]"}], ",", "\[IndentingNewLine]",
+         RowBox[{
+          RowBox[{"Print", "[",
+           RowBox[{"100", "/", "t"}], "]"}], ";", "\[IndentingNewLine]",
+          RowBox[{"cont", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}],
+      "\[IndentingNewLine]", ")"}]}], ",", "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"{",
+      RowBox[{"e", ",", "cont", ",", "resume"}], "}"}], "|->",
+     RowBox[{"(", "\[IndentingNewLine]",
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<catch\>\"", "]"}], ";",
+       "\[IndentingNewLine]",
+       RowBox[{"resume", "[", "1", "]"}]}], "\[IndentingNewLine]", ")"}]}], ",",
+     "\[IndentingNewLine]",
+    RowBox[{
+     RowBox[{"Print", "[", "\"\<final\>\"", "]"}], "&"}]}],
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]",
+ RowBox[{"test", "[", "0", "]"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+
+}]]
+}]],
+
+Cell[TextData[{
+ "\:800c\:8fd9\:4e2a\:4e1c\:897f\:80fd\:5b9e\:73b0\:4e0d\:53ea\:662f\:5f02\
+\:5e38\:7684\:529f\:80fd\:ff0c\:4ece\:67d0\:79cd\:7a0b\:5ea6\:4e0a\:6765\:8bf4\
+\:5b83\:80fd\:8de8\:8d8a\:51fd\:6570\:65bd\:5c55\:6548\:679c (perform effect)\
+\:ff0c\:53ef\:4ee5\:8bfb ",
+ ButtonBox["\:539f\:7248",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://magic.huohuo.moe/html/Algeff.html#\:4ee3\:6570\:4f5c\:7528"],
+     None},
+  ButtonNote->
+   "https://magic.huohuo.moe/html/Algeff.html#\:4ee3\:6570\:4f5c\:7528"],
+ " \:4e86\:89e3\:ff0e"
+}], "Text"]
+}]]
 }]]
 }]]
 }]]
